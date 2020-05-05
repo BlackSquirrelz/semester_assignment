@@ -1,14 +1,14 @@
 # 2020-05-05 UZH CALR
 
-GIT Repository for Syntactic Parsing
+## GIT Repository for Syntactic Parsing
 
-TEAM:
+## Team:
 
 - Ariana Dragusha
 - Rodolfo Miranda Chavez
 - Tobias Weisskopf
 
-Assignment:
+## Assignment:
 
 The final project will be prepared in groups of 3-4 people. The project requires an application
 of the corpus processing or annotation methods covered in the course on the Horizons
@@ -27,10 +27,12 @@ Each group will prepare a 15-min. presentation describing
 media technolgy.
 
 
-Presentation:
-
+## Presentation:
 
 01. Description of Chosen Application
+
+### Methodology
+
 
 02. General Processing or Analysis System to be Implemented
 
@@ -38,6 +40,15 @@ Presentation:
 
 04. Challenges
 
+### ISSUES
+
 05. Outcomes of the Project
+
+
+## References:
+
+### Corpus Source: 
+
+https://www.horizons-mag.ch/
 
 
