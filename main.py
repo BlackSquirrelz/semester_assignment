@@ -2,8 +2,9 @@ import pandas as pd
 from nltk.tokenize import sent_tokenize as st
 
 # TODO make it so that the user can select any file.
-def read_data():
-    f = open('./data/horizons_test.txt', "r")
+def read_data(file_name):
+    f = open(file_name, "r")
+    print(f"\t {file_name}")
     text = f.read()
     
     #data = pd.DataFrame(text)
@@ -32,18 +33,21 @@ def text_preProcessing(text):
 
 # The Main Function just calls the read data for now
 def main():
-    data = read_data()
 
+    file_name = './data/horizons_test.txt'
 
-    # print(f"Data: {data}")
-
-    print("------------------------------")
+    # Reading the file section
+    print("Reading the Data...")
+    data = read_data(file_name)
     print("Finished Reading the Data... \n")
-
+    print("------------------------------")
+    
+    # Pre-Processing Section
     print("Starting Pre-Processing...")
     text_preProcessing(data)
-    print("------------------------------")
+
     print("Finished Pre-Processing...\n")
+    print("------------------------------")
     
     print("Finished Program")
 
