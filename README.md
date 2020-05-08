@@ -47,6 +47,18 @@ media technolgy.
 
 ## References:
 
+https://www.nltk.org/book/ch08.html
+
+https://www.tutorialspoint.com/natural_language_processing/natural_language_processing_syntactic_analysis.htm
+
+https://en.wikipedia.org/wiki/Parsing
+
+https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780198568971.001.0001/oxfordhb-9780198568971-e-017
+
+https://www.sciencedirect.com/science/article/pii/B9780123693747500134
+
+
+
 ### Corpus Source: 
 
 https://www.horizons-mag.ch/
