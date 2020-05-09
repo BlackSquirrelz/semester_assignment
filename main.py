@@ -26,11 +26,19 @@ def main():
     # Reading the file section
     print("Reading the Data...")
     test_file = read_data(file_name)
-    test_case =  Article(test_file)
-    print(test_case.text)
+    test_case =  Article(test_file, 'en')
+    #print(test_case.text)
     
     print("Finished Reading the Data... \n")
     print("------------------------------")
+
+    # Text Statistics
+    print("Printing stats... \n")
+    test_case.stats()
+    print("------------------------------")
+
+    # TODO Store each of the sentences in a pandas dataframe for easy access
+    # df = pd.DataFrame(data, index=[0], columns=["raw"])
     
     # Pre-Processing Section
     print("Starting Pre-Processing...")
