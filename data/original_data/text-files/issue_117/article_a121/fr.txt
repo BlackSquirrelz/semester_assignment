@@ -1,0 +1,4 @@
+Title: Une startup redonne du relief aux photographies
+Author: Florian Fisch
+Abstract: En combinant de multiples images, une spin-off de l’Université de Bâle reproduit les effets d’éclairage et permet un examen interactif plus réaliste d’œuvres d’art en ligne.
+

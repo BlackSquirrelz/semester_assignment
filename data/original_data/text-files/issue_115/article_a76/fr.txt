@@ -1,0 +1,10 @@
+Title: Des poissons pour tester les nanomédicaments
+Author: Sylvia Wagner
+Abstract: Le transport des nanomédicaments testé dans les poissons zèbres
+
+Les nanoparticules (en rouge) se diffusent dans les vaisseaux sanguins des poissons (en vert). | Photo: Sandro Sieber und Dominik Witzigmann
+La nanomédecine veut acheminer les médicaments de manière ciblée vers les tissus malades, par exemple les tumeurs. Les premiers nanotransporteurs sont utilisés pour les traitements cliniques. Pourtant, ces minuscules véhicules millimètre réservent régulièrement des surprises lors des essais sur les rats et les souris. Certains s’agglutinent déjà peu après leur injection. D’autres circulent suffisamment longtemps dans le sang pour atteindre le tissu malade, ont montré Dominik Witzigmann et Sandro Sieber de l’Université de Bâle.
+Les pharmacologues ont mené des essais sur des embryons de poissons zèbres dont les vaisseaux sanguins ont été rendus verts fluorescents. Ils présentent l’avantage d’être transparents et de poser moins de questions éthiques que les expériences sur des rongeurs plus évolués.
+Les chercheurs ont marqué leurs nanotransporteurs au moyen d’une coloration rouge fluorescente de manière à pouvoir suivre leur déploiement dans le réseau sanguin. Ils ont ainsi constaté que la moindre différence de constitution était susceptible d’influencer fortement la diffusion dans l’organisme.
+Le comportement des nanotransporteurs dans l’organisme reste aujourd’hui éminemment imprévisible. Les essais sur les embryons de poissons zèbres doivent permettre de cerner la manière de les concevoir si l’ont veut qu’ils délivrent l’essentiel de leur fret aux cellules malades tout en épargnant les tissus sains. «Le modèle du poisson zèbre doit aider à identifier parmi différents transporteurs les meilleurs candidats potentiels avant de se lancer dans de laborieuses séries d’essais sur les rongeurs», dit Dominik Witzigmann.
+WagnerS. Sieber et al.: Zebrafish as an early stage screening tool to study the systemic circulation of nanoparticulate drug delivery systems in vivo. Journal of Controlled Release (2017)

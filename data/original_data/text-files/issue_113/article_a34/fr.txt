@@ -1,0 +1,9 @@
+Title: Fake news
+Author: Matthias Egger
+Abstract: 
+Photo: Manu Friederich
+Amsterdam. La caméra survole le canal des Princes. Soudain, la vue pittoresque laisse place à l’horreur: le corps sans vie d’un jeune homme est repêché dans le Brouwersgracht. La victime, un chercheur russe en oncologie, avait mis des millions d’articles scientifiques gratuitement à disposition sur Internet. Dans son sac, les enquêteurs récupèrent une facture de taxi et une adresse: Sonarweg 31, le siège de Greed Elsegier, la maison d’édition scientifique la plus puissante au monde. Quelques jours plus tard, son CEO sera retrouvé mort dans son bureau.
+Cet épisode de Tatort (une série policière allemande, ndlr) illustre au plus proche de la réalité les abus des maisons d’édition scientifiques. Leur modèle d’affaires relève du génie: elles privatisent les résultats de travaux financés par la société. Elles les publient dans des revues auxquelles doivent s’abonner les universités, à nouveau grâce à l’argent du contribuable. Le marché est dominé par quelques acteurs qui profitent sans scrupule de leur pouvoir. Leurs tarifs toujours en hausse leur ont permis de générer depuis longtemps des rendements supérieurs à 30%. En 2015, le CEO de Reed Elsevier a touché un salaire de 16 millions de livres.
+Cet épisode de Tatort doit encore être tourné. Ce serait une bonne chose: il pourrait sensibiliser le grand public et le monde politique à l’importance du mouvement open access. Son objectif est d’empêcher que la collectivité doive racheter le savoir académique aux éditeurs.
+Mais il ne faut pas attendre un tel épisode pour agir. Nous avons le pouvoir de changer les règles du jeu. Nous devons enfin arrêter d’alimenter avec l’argent des contribuables ce business bien trop profitable.
+Matthias Egger est président du Conseil national de la recherche du FNS.

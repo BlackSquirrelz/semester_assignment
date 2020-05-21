@@ -1,0 +1,9 @@
+Title: The heart as power plant
+Author: Alexandra Bröhm
+Abstract: A research group in Bern has developed a pacemaker that works without batteries.
+
+In future, this harvester should produce the energy in the heart to power the pacemaker. | Image: Adrian Zurbuchen
+Every year, doctors all over the world implant more than a million cardiac pacemakers. It’s a routine operation, but five to ten years later, the tiny device needs a new battery. And with every new operation comes the risk of complications. For this reason, the biomedical engineer Adrian Zurbuchen is working on an autonomous pacemaker that could work without any battery.
+“The goal is to implant a pacemaker once and then forget about it”, says Zurbuchen, who has just finished a research visit to the University of Michigan in Ann Arbor. He and his colleagues at the University of Bern are suggesting a new approach: a tiny apparatus with magnets and inductors that could transform the activity of the heart muscle into electrical energy so as to power a pacemaker. With every beat of its muscle, the heart activates this so-called ‘harvester’. This mini-generator could be implanted in the right side of the heart with a catheter. The downside to this solution is that the patient could never again enter an MRI scanner on account of the magnets in the harvester.
+In order to push six litres of blood through the body every minute, the heart has a pump capacity of roughly one watt. A pacemaker by contrast requires only five to ten microwatts, thus only a fraction of the energy produced by the muscle. In an in-vivo experiment with pigs, Zurbuchen and his team managed to produce 1.7 microwatts of power at 160 heartbeats per minute. That would not be sufficient, but Zurbuchen has run a simulation and calculated the parameters of the harvester that would have to be altered in order for it to run on the energy available.
+Alexandra Bröhm

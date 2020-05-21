@@ -1,0 +1,12 @@
+Title: La matière blanche en couleur
+Author: Daniel Saraga
+Abstract: Cette noix multicolore, c’est notre cerveau vu d’en haut. La tractographie retrace les chemin que prend l’information.
+
+Image: Gabriel Girard/EPFL
+Cette peinture en forme de noix, c’est notre cerveau, vu d’en haut. Les couleurs indiquent la direction suivie par les flux d’informations: longitudinale en vert, transversale en rouge et verticale en bleu. Le corps calleux, qui relie les deux hémisphères, est bien visible en rouge au centre de l’image.
+L’image a été réalisée par Gabriel Girard, chercheur postdoctoral au Laboratoire du traitement de signaux 5 à l’EPFL, grâce à la tractographie. Cette méthode rend possible la mise en évidence de la substance blanche du cerveau. Celle-ci est composée par les axones, le prolongement principal de chaque neurone qui le relie aux autres. La fameuse matière grise, elle, comprend essentiellement le corps cellulaire des neurones.
+«Ces images révèlent dans quelle direction se propage l’information dans le cerveau, explique le chercheur québécois. Elles permettent de regrouper des tissus et de cartographier les régions du cortex. Surtout, elles montrent de quelle façon ces dernières sont reliées entre elles et contribuent ainsi à ce qu’on appelle la connectomique.»
+La tractographie fonctionne avec l’IRM de diffusion. Cette technique d’imagerie ne révèle pas l’emplacement des molécules d’eau, à l’instar d’une IRM classique, mais leur mouvement. Etant donné que les molécules se déplacent avant tout le long des axones, elle permet de les retracer.
+«Cette image n’est qu’une première étape, poursuit Gabriel Girard. Avec mon équipe, nous caractérisons les axones plus en détail, tel leur taille ou leur nombre, et cherchons à établir des liens avec des maladies.» Une dégénérescence locale des tissus neuronaux par exemple peut influer sur la transmission des signaux, ce qui pourrait être mis en évidence par la tractographie.
+«J’aime montrer ce genre d’images. Elles suscitent souvent la curiosité et des questions. C’est une bonne porte d’entrée sur mon travail et m’aide à expliquer ce que je fais – même à des non-spécialistes.»
+Daniel Saraga

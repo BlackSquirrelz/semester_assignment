@@ -1,0 +1,17 @@
+Title: Sur la piste du sélénium
+Author: Alexandra Bröhm
+Abstract: Le sélénium est un oligoélément vital pour les êtres vivants. Un projet cartographie sa répartition mondiale pour comprendre les raisons de sa carence dans certaines régions.
+
+La concentration de sélénium dans le sol est élevée en Europe (vert foncé) et basse dans les régions sèches (beige). | Image: Winkel/PNAS (2017)
+Il n'est présent qu'en infimes quantités mais s'avère indispensable à la vie: le sélénium. Cet élément trace est moins connu que ses grands frères, le fer, l'iode et le zinc, mais humains et animaux souffrent s'ils viennent à en manquer. Une raison suffisante pour Lenny Winkel, biogéochimiste au Département des sciences de l'environnement d'ETH Zurich et à l'institut de recherche sur l'eau Eawag, de lui accorder toute son attention. Au-delà de l'échelle moléculaire, elle s'intéresse aussi au contexte global et examine la distribution du sélénium sur Terre et les facteurs l'influençant.
+Des carences dans le monde entier
+«Nous n'en savons pas encore beaucoup sur la répartition des éléments traces», explique la chercheuse. La concentration des sols en sélénium varie fortement selon les régions. L'homme l'absorbe principalement en consommant des produits végétaux, mais la teneur en sélénium des plantes varie elle aussi fortement en fonction du lieu où elles poussent.
+De 500 000 à un million de personnes souffrent d'une carence en sélénium au niveau mondial. En Europe, c'est moins la concentration dans les sols qui pose problème que la quantité absorbée par les plantes, précise Lenny Winkel. Cela ne signifie pas que tout le monde en manque en Suisse, car en général on ne s'y nourrit pas seulement de produits locaux.
+«Globalement, la concentration du sélénium dans le sol recule également en raison du réchauffement climatique», indique Lenny Winkel. Elle vient de publier avec son équipe une carte mondiale de sa répartition.
+Des oeufs au sélénium
+Le manque touche aussi d'autres continents. En Mongolie, les autorités ont lancé en 2016 un programme dans lequel les poules sont nourries avec du grain enrichi dans l'espoir que leurs oeufs réduisent les carences au sein de la population.
+Différents paramètres liés à la composition du sol et au climat influencent la concentration. En règle générale, un terrain sera pauvre en sélénium s'il est sec, mais les précipitations ne sont pas tout: la quantité de carbone organique joue aussi un rôle déterminant parce qu'il retient l'oligo-élément dans le sol en se combinant avec lui.
+«Le projet de recherche de Lenny Winkel est unique et très important», commente Markus Lenz, qui travaille lui également sur le sélénium à la Hochschule für Life Sciences FHNW. Les recherches liées à la répartition globale des éléments traces sont rares. Le sélénium n'est pas facile à étudier parce que sa chimie est très complexe et qu'il se retrouve dans la nature sous différentes formes.
+De plus, le rôle du phytoplancton des eaux marines joué dans sa répartition mondial n'est pas clair, un aspect que l'équipe de Lenny Winkel veut également examiner. En savoir plus sur ses voies de diffusion sera nécessaire pour combattre les carences qui affectent certaines régions et qui se voient renforcées par le changement climatique.
+Alexandra Bröhm est journaliste scientifique au Tages-Anzeiger et à la SonntagsZeitung.
+G.D. Jones et al.: Selenium deficiency risk predicted to increase under future climate change. PNAS (2017)

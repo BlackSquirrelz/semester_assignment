@@ -1,0 +1,4 @@
+Title: Filtrer l’eau grâce au lait
+Author: Florian Fisch
+Abstract: Une spin-off de l’ETH Zurich recourt à une protéine du petit-lait pour purifier l’eau contaminée par des métaux lourds.
+

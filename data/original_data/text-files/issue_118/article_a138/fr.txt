@@ -1,0 +1,9 @@
+Title: Comment plonger au cœur d’une avalanche
+Author: Sven Titz
+Abstract: Un nouveau dispositif permet de voir à l’intérieur d’une coulée de neige. De quoi développer une nouvelle classification des avalanches.
+
+Cette avalanche artificielle déclenchée près d’Arbaz (VS) est analysée par un radar. | Image: Archiv SLF
+Les avalanches de plaques, de neige mouillée ou de poudreuse sont faciles à classifier une fois qu’elles ont dévalé une pente. Mais les mécanismes à l’oeuvre durant l’écoulement restent très mal connus. Anselm Köhler et Betty Sovilla, de l’Institut pour l’étude de la neige et des avalanches de Davos, ont développé un radar afin d’examiner les tourbillons de poudreuse. Leurs mesures leur ont permis de mettre au point une nouvelle classification.
+Entre les hivers 2009 et 2015, ils ont observé 77 avalanches d’origine naturelle ou artificielle dans la vallée de la Sionne, près d’Arbaz (VS). Le nouveau dispositif a rendu possible l’observation des grumeaux de neige d’une taille de 2 à 10 centimètres, de reconnaître leurs structures et de suivre leurs modifications dans l’avalanche. De plus, des caméras et des capteurs ont enregistré la vitesse d’écoulement, la densité de la neige, sa température, sa pression et les vibrations.
+En se basant sur ces mesures, les deux scientifiques ont développé une nouvelle classification, plus détaillée, comprenant sept régimes d’écoulement. Ils ont pu analyser les facteurs externes – comme la température ou l’inclinaison de la pente – qui les influencent et mis en évidence que des grosses avalanches voient parfois différents régimes se superposer.
+Betty Sovilla espère que l’étude et les données accessibles au public favoriseront le développement de meilleurs modèles physiques des avalanches. Des évaluations plus précises des risques pourraient peutêtre réduire le nombre de victimes. Au cours de l’hiver dernier, 26 personnes ont perdu la vie dans des coulées de neige en Suisse.

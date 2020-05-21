@@ -1,0 +1,4 @@
+Title: In vitro goes 3D
+Author: Daniel Saraga
+Abstract: Several Swiss startups are developing cell tissues in three dimensions. Compared to standard 2D cultures, they offer more reliable testbeds for pharmaceuticals, biocompatible materials and toxicology assessments.
+

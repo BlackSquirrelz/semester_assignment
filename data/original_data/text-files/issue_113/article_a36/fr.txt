@@ -1,0 +1,4 @@
+Title: Authentifier la nourriture par son ADN
+Author: Daniel Saraga
+Abstract: Une startup lausannoise sort les tests génétiques des laboratoires. Son produit vise à accélérer l’analyse des aliments afin d’en faciliter l’authentification.
+

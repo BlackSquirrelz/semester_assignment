@@ -1,0 +1,4 @@
+Title: Portfolio
+Author: Valérie Chételat
+Abstract: Observer la naissance des étoiles ou profiter de l’énergie solaire, simuler le cerveau ou se protéger des crues: Une comparaison en image de mégaprojets dans la science et dans la société.
+

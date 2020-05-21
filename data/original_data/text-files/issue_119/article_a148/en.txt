@@ -1,0 +1,4 @@
+Title: Images
+Author: Valérie Chételat
+Abstract: The particle accelerator at CERN cost a lot of money, uses up incredible amounts of electricity, and took longer than a decade to build. Was it worth it? We here illustrate and compare megaprojects in science and beyond.
+

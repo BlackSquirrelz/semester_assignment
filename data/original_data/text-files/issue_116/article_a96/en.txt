@@ -1,0 +1,11 @@
+Title: Connectomics
+Author: Daniel Saraga
+Abstract: The application of tractography to connectomics allows us to visualise our brains in new ways (seen here from above).
+
+Image: Gabriel Girard/EPFL
+This walnut-shaped painting is our brain seen from above. The colours indicate the direction of information flows: longitudinal in green, transversal in red, and vertical in blue. The corpus callosum, which connects the two hemispheres, is the clearly visible red shape in the centre.
+This image was produced by Gabriel Girard, a postdoctoral researcher at the Signal Processing Laboratory 5 at EPFL. He uses a method called tractography, which can identify the white matter of the brain. White matter is composed of axons, the long extensions of neurons that interconnect them with one another. As for the more well-known grey matter, that is essentially comprised of the cell bodies of those same neurons.
+“What these images reveal is the directions in which information propagates in the brain”, explains Girard, who is originally from Quebec. “They allow us to group tissues and map cortical regions. Above all, they show how they are connected, and thus contribute to a field of research called connectomics”.
+The technology behind tractography is diffusion MRI. This imaging technique is different from conventional MRI as it reveals the movement of water molecules, not their locations. As water molecules move first and foremost along the axons, they can be used to trace paths.
+“This image is only a first step”, says Girard. “My team and I are characterising axons in even greater detail, in terms of their size or number, which helps us look for links to diseases”. A local degeneration of neuronal tissue, for example, can affect signal transmission and could therefore show up when using tractography.
+Daniel Saraga
