@@ -1,9 +1,9 @@
 import sqlite3
 from sqlite3 import Error
 
-def make_database():
-    database = r"articles.db"
+DATABASE = r"articles.db"
 
+def make_database():
     sql_create_articles_table = """ CREATE TABLE IF NOT EXISTS articles (
                                         id integer PRIMARY KEY,
                                         issue text NOT NULL,
@@ -16,7 +16,7 @@ def make_database():
                                     ); """
 
     # create a database connection
-    conn = create_connection(database)
+    conn = create_connection(DATABASE)
 
     # create tables
     if conn is not None:
@@ -66,4 +66,21 @@ def create_article(conn, article):
     cur = conn.cursor()
     cur.execute(sql, article)
     return cur.lastrowid
+    
 
+
+def write_data_toDB(test_file):
+
+    split_file = test_file.split('\n',2)
+
+    title = split_file[0].replace('Title: ', "")
+    author = split_file[1].replace('Author: ', "")
+    body = split_file[2].replace('Abstract: ', "")
+
+    conn = create_connection(DATABASE)
+    with conn:
+        # create a new article
+        # (issue, article_number, language, title, author, body):
+        article = ('issue_TEST', 'article_aTest','de', author, title, body )
+        article_id = create_article(conn, article)
+        print(article_id, title, author, body)

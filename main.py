@@ -1,13 +1,28 @@
+# Database requirements
 import sqlite3
 from sqlite3 import Error
-import pandas as pd
-from Article import Article
-import database
+import database as db
 
+# System stuff
+import os
+
+# Other requirements
+from Article import Article
+
+# Authorship information
+__author__ = "Tobias Weisskopf"
+__copyright__ = "Copyright 2020, Semester Assignment"
+__credits__ = ["Tobias Weisskopf", "Adriana Dragusha", 'Rodolfo Chavez']
+__license__ = "MIT"
+__version__ = "0.1.0"
+__maintainer__ = "Tobias Weisskopf"
+__status__ = "Dev"
+
+#Define tha Database File as a Static File
 DATABASE = r"articles.db"
 
 # TODO make it so that the user can select any file.
-def read_data(file_name):
+def read_data(file_name): # Put XARGS here
     f = open(file_name, "r")
     print(f"\t {file_name}")
     text = f.read()
@@ -17,50 +32,52 @@ def read_data(file_name):
     f.close()
     return text
 
-def write_data_toDB(test_file):
-    
-    conn = database.create_connection(DATABASE)
-    with conn:
-        # create a new article
-        # (issue, article_number, language, title, author, body):
-        article = ('issue_TEST', 'article_aTest','de', "Test Article", "Tobias Weisskopf", "Lorem Ipsum" );
-        article_id = database.create_article(conn, article)
-        print(article_id)
-
-
-# Create an instance of Article -> '(self, issue, article_number, language, title, author, body):'
-    test_case =  Article('issue_TEST', 'article_aTest','de', "Test Article", "Tobias Weisskopf", test_file) 
-    print(test_case.author)
-
 def parser_compare(text):
     pass
 
 # The Main Function just calls the read data for now
 def main():
+    issues = []
+    articles = []
+    
+    # List all files in a directory using os.listdir
+    basepath = './data/original_data/text-files'
+    entries = os.scandir(basepath)
+    print(f"Looking in {basepath} for issues.")
 
-    database.make_database()
+    # TODO: This can probably be optimized a bit... but not today
+    # From the base directory look for all issues of the magazine and append them to the issues list
+    for issue in entries:
+        issues.append(issue.name)
+        print(f"\t found issue named:  {issue.name} \n")
+
+    # With the issues list, look through all the articles directories, basepath and issue list
+    for issue in issues:
+        articlepath = basepath + "/" + issue
+        article_entries = os.scandir(articlepath)
+        for article in article_entries:
+            articles.append(article.name)
+            print(f"\t\t found article {article.name} in {articlepath}.")
+        
+    db.make_database()
 
     file_name = './data/original_data/text-files/issue_109/article_a1/de.txt'
     print(file_name)
-    test_file_name = './data/test_data/horizons_test.txt'
+    # test_file_name = './data/test_data/horizons_test.txt'
 
     # Reading the file section
     print("Reading the Data...")
-    test_file = read_data(test_file_name)
+    test_file = read_data(file_name)
     
-    # Create an instance of Article -> '(self, issue, article_number, language, title, author, body):'
-    test_case =  Article('issue_TEST', 'article_aTest','de', "Test Article", "Tobias Weisskopf", test_file) 
-    print(test_case.author)
-
-    write_data_toDB(test_file)
+    db.write_data_toDB(test_file)
     
     print("Finished Reading the Data... \n")
     print("------------------------------")
 
     # Text Statistics
-    print("Printing stats... \n")
-    test_case.stats()
-    print("------------------------------")
+    #print("Printing stats... \n")
+    #test_case.stats()
+    #print("------------------------------")
 
     # TODO Store each of the sentences in a pandas dataframe for easy access
     # df = pd.DataFrame(data, index=[0], columns=["raw"])
