@@ -1,5 +1,10 @@
+import sqlite3
+from sqlite3 import Error
 import pandas as pd
 from Article import Article
+import database
+
+DATABASE = r"articles.db"
 
 # TODO make it so that the user can select any file.
 def read_data(file_name):
@@ -12,8 +17,20 @@ def read_data(file_name):
     f.close()
     return text
 
-def write_data():
-    pass
+def write_data_toDB(test_file):
+    
+    conn = database.create_connection(DATABASE)
+    with conn:
+        # create a new article
+        # (issue, article_number, language, title, author, body):
+        article = ('issue_TEST', 'article_aTest','de', "Test Article", "Tobias Weisskopf", "Lorem Ipsum" );
+        article_id = database.create_article(conn, article)
+        print(article_id)
+
+
+# Create an instance of Article -> '(self, issue, article_number, language, title, author, body):'
+    test_case =  Article('issue_TEST', 'article_aTest','de', "Test Article", "Tobias Weisskopf", test_file) 
+    print(test_case.author)
 
 def parser_compare(text):
     pass
@@ -21,13 +38,21 @@ def parser_compare(text):
 # The Main Function just calls the read data for now
 def main():
 
-    file_name = './data/horizons_test.txt'
+    database.make_database()
+
+    file_name = './data/original_data/text-files/issue_109/article_a1/de.txt'
+    print(file_name)
+    test_file_name = './data/test_data/horizons_test.txt'
 
     # Reading the file section
     print("Reading the Data...")
-    test_file = read_data(file_name)
-    test_case =  Article(test_file, 'en')
-    #print(test_case.text)
+    test_file = read_data(test_file_name)
+    
+    # Create an instance of Article -> '(self, issue, article_number, language, title, author, body):'
+    test_case =  Article('issue_TEST', 'article_aTest','de', "Test Article", "Tobias Weisskopf", test_file) 
+    print(test_case.author)
+
+    write_data_toDB(test_file)
     
     print("Finished Reading the Data... \n")
     print("------------------------------")
