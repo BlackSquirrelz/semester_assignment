@@ -1,0 +1,11 @@
+LANG,PAR,TP,FN,TN,FP
+DE,Stanford,10,4,3,8
+DE,AllenNLP,10,0,0,0
+DE,spaCy,10,8,4,3
+EN,Stanford,8,4,3,10
+EN,AllenNLP,4,8,3,10
+EN,spaCy,10,8,4,3
+FR,Stanford,4,8,10,3
+FR,AllenNLP,3,10,4,8
+FR,spaCy,5,9,5,7
+

@@ -3,6 +3,7 @@ import sqlite3
 from sqlite3 import Error
 import database as db
 import reportGenerator as rg
+import pandas as pd
 
 # System stuff
 import os
@@ -92,18 +93,16 @@ def main():
     # Pre-Processing Section
     print("Starting Pre-Processing...")
     #test_case.text_preProcessing()
-
-    #Create Confusion Matrix
-    sample_data = [4, 3]
-
+    
+    sample_data = pd.read_csv('sample_data.csv',delimiter=',')
+    report = rg.write_report(sample_data)
 
 
     print("Finished Pre-Processing...\n")
     print("------------------------------")
-    
-    print("Writing Report")
-    rg.write_report(sample_data)
-
+    print("Generating Report...\n")
+    print(report)
+    print("------------------------------")
     print("Finished Program")
 
 if __name__ == "__main__":
