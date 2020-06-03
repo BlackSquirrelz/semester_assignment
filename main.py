@@ -43,24 +43,30 @@ def main():
     # List all files in a directory using os.listdir
     basepath = './data/original_data/text-files'
     entries = os.scandir(basepath)
-    print(f"Looking in {basepath} for issues.")
+    print(f"Looking in {basepath} for issues:")
 
     # TODO: This can probably be optimized a bit... but not today
     # From the base directory look for all issues of the magazine and append them to the issues list
     for issue in entries:
-        issues.append(issue.name)
-        print(f"\t found issue named:  {issue.name} \n")
-
+        if (issue.name != ".DS_Store"):
+            issues.append(issue.name)
+            #print(f"\t found issue named:  {issue.name}")
+    
+    print(f'Found {len(issues)} issues in {basepath}!')
+    issues.sort()
+    print(issues)
     # With the issues list, look through all the articles directories, basepath and issue list
     for issue in issues:
+        print(issue)
         articlepath = basepath + "/" + issue
         article_entries = os.scandir(articlepath)
         for article in article_entries:
             articles.append(article.name)
             print(f"\t\t found article {article.name} in {articlepath}.")
-        
+    articles.sort()
+    print(f'Found: {len(articles)} articles in {len(issues)} issues!' )
     db.make_database()
-
+    
     file_name = './data/original_data/text-files/issue_109/article_a1/de.txt'
     print(file_name)
     # test_file_name = './data/test_data/horizons_test.txt'

@@ -83,4 +83,4 @@ def write_data_toDB(test_file):
         # (issue, article_number, language, title, author, body):
         article = ('issue_TEST', 'article_aTest','de', author, title, body )
         article_id = create_article(conn, article)
-        print(article_id, title, author, body)
+	# print(article_id, title, author, body)
