@@ -83,6 +83,18 @@ What is parsing and why do we do it?
     Comparison between parser and language
 
 05. Outcomes of the Project
+
+Below table is a proposal on how to compare the parsers to each other and to the languages.
+The same annotated text is provided to all parsers. With this approach we want to find the most specialised parser, and the best allrounder.
+
+For balanced evaluation, we aim to use the F-Score to populate the below table in the final report:
+
+Language | Stanford Parser | AllenNLP Parser | spaCy Parser 
+---------|-----------------|-----------------|-------------
+DE|X|X|X
+EN|X|X|X
+FR|X|X|X
+
     
 ## Corpus Source: 
 
