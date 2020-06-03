@@ -2,6 +2,7 @@
 import sqlite3
 from sqlite3 import Error
 import database as db
+import reportGenerator as rg
 
 # System stuff
 import os
@@ -92,9 +93,17 @@ def main():
     print("Starting Pre-Processing...")
     #test_case.text_preProcessing()
 
+    #Create Confusion Matrix
+    sample_data = [4, 3]
+
+
+
     print("Finished Pre-Processing...\n")
     print("------------------------------")
     
+    print("Writing Report")
+    rg.write_report(sample_data)
+
     print("Finished Program")
 
 if __name__ == "__main__":
