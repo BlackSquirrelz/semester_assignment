@@ -98,13 +98,16 @@ def write_data_toDB(metadata, f):
 
     conn = create_connection(DATABASE)
     with conn:
-        pass
         # create a new article
         # (issue, article_number, language, title, author, body):
         article = (issue, article_number,language, author, title, body, hash_value.hexdigest() )
-        article_id = create_article(conn, article)
-        print(issue, article_number, article_id, title, author, body, hash_value.hexdigest())
-
+        if checkArticleExistance(conn, hash_value.hexdigest()):
+            print(f"\tarticle {hash_value.hexdigest()} already exists")
+        else:
+            article_id = create_article(conn, article)
+            print(f"\tcreated Article: {hash_value.hexdigest()} !")
+    
+        
 
 def store_articles():
     issues = []
@@ -153,3 +156,15 @@ def read_data(file_name):
     text = f.read()
     f.close()
     return text
+
+# This Function makes sure that no duplicate articles are being uploaded to the database
+def checkArticleExistance(conn, hash_value):
+    c = conn.cursor()
+    article_exists = False
+    query = "SELECT EXISTS(SELECT 1 FROM articles WHERE hash=?)"
+    c.execute(query, (hash_value,))
+
+    if c.fetchone():
+        article_exists =  True
+
+    return article_exists
