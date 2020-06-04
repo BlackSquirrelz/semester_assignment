@@ -69,9 +69,14 @@ def create_article(conn, article):
     
 
 
-def write_data_toDB(test_file):
+def write_data_toDB(metadata, f):
+    
+    # Extract Metadata
+    issue = metadata[0]
+    article_number = metadata[1]
+    language = metadata[2]
 
-    split_file = test_file.split('\n',2)
+    split_file = f.split('\n',2)
 
     title = split_file[0].replace('Title: ', "")
     author = split_file[1].replace('Author: ', "")
@@ -81,6 +86,7 @@ def write_data_toDB(test_file):
     with conn:
         # create a new article
         # (issue, article_number, language, title, author, body):
-        article = ('issue_TEST', 'article_aTest','de', author, title, body )
+        article = (issue, article_number,language, author, title, body )
         article_id = create_article(conn, article)
-	# print(article_id, title, author, body)
+	
+    print(issue, article_number, language, article_id, title, author, body)

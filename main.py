@@ -8,9 +8,6 @@ import pandas as pd
 # System stuff
 import os
 
-# Other requirements
-from Article import Article
-
 # Authorship information
 __author__ = "Tobias Weisskopf"
 __copyright__ = "Copyright 2020, Semester Assignment"
@@ -53,6 +50,10 @@ def main():
     
     print(f'Found {len(issues)} issues in {basepath}!')
     issues.sort()
+    
+    file_name = './data/original_data/text-files/issue_109/article_a1/de.txt'
+    
+    test_file = read_data(file_name)
 
     # With the issues list, look through all the articles directories, basepath and issue list
     for issue in issues:
@@ -61,25 +62,23 @@ def main():
         article_entries = os.scandir(articlepath)
         for article in article_entries:
             articles.append(article.name)
-            ## TODO: Article Storage to DB
-            # HERE THE ARTICLE NEEDS TO BE STORED IN THE DB
-            Article(issue,article.name,'de',"Test","Toby-Wan-Kenobi","Test")
+            test_metadata = [issue, article.name, "EN"]
+            db.write_data_toDB(test_metadata, test_file)
             print(f"\t\t found article {article.name} in {articlepath}.")
     articles.sort()
     print(f'Found: {len(articles)} articles in {len(issues)} issues!' )
     db.make_database()
     
-    file_name = './data/original_data/text-files/issue_109/article_a1/de.txt'
+
     print(file_name)
     # test_file_name = './data/test_data/horizons_test.txt'
 
     # Reading the file section
-    print("Reading the Data...")
-    test_file = read_data(file_name)
+    print("Writing Data to DB...")
     
-    db.write_data_toDB(test_file)
+    db.write_data_toDB(test_metadata, test_file)
     
-    print("Finished Reading the Data... \n")
+    print("Finished Writing the Data... \n")
     print("------------------------------")
 
     # Text Statistics
