@@ -103,6 +103,7 @@ def write_data_toDB(metadata, f):
         # (issue, article_number, language, title, author, body):
         article = (issue, article_number,language, author, title, body, hash_value.hexdigest() )
         article_id = create_article(conn, article)
+        print(issue, article_number, article_id, title, author, body, hash_value.hexdigest())
 
 
 def store_articles():
