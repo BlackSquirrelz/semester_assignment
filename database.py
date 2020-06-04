@@ -144,7 +144,7 @@ def store_articles():
                 print(f"\t\t found article {article.name} in {articlepath}.")
     articles.sort()
     print(f'Found: {len(articles)} articles in {len(issues)} issues!' )
-
+    
 
 # TODO make it so that the user can select any file.
 def read_data(file_name):
