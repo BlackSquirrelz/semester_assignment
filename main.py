@@ -2,7 +2,7 @@
 import sqlite3
 from sqlite3 import Error
 import database as db
-import reportGenerator as rg
+import services.reportGenerator as rg
 import pandas as pd
 
 # System stuff
@@ -34,8 +34,6 @@ def read_data(file_name): # Put XARGS here
     f.close()
     return text
 
-def parser_compare(text):
-    pass
 
 # The Main Function just calls the read data for now
 def main():
@@ -52,11 +50,10 @@ def main():
     for issue in entries:
         if (issue.name != ".DS_Store"):
             issues.append(issue.name)
-            #print(f"\t found issue named:  {issue.name}")
     
     print(f'Found {len(issues)} issues in {basepath}!')
     issues.sort()
-    print(issues)
+
     # With the issues list, look through all the articles directories, basepath and issue list
     for issue in issues:
         print(issue)
@@ -64,6 +61,9 @@ def main():
         article_entries = os.scandir(articlepath)
         for article in article_entries:
             articles.append(article.name)
+            ## TODO: Article Storage to DB
+            # HERE THE ARTICLE NEEDS TO BE STORED IN THE DB
+            Article(issue,article.name,'de',"Test","Toby-Wan-Kenobi","Test")
             print(f"\t\t found article {article.name} in {articlepath}.")
     articles.sort()
     print(f'Found: {len(articles)} articles in {len(issues)} issues!' )
