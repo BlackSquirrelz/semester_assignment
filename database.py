@@ -1,9 +1,17 @@
 import sqlite3
 from sqlite3 import Error
 
+# System stuff
+import os
+import os.path
+from os import path
+
+import hashlib
+
 DATABASE = r"articles.db"
 
 def make_database():
+    print("Called make_database")
     sql_create_articles_table = """ CREATE TABLE IF NOT EXISTS articles (
                                         id integer PRIMARY KEY,
                                         issue text NOT NULL,
@@ -11,7 +19,8 @@ def make_database():
                                         language text NOT NULL,
                                         author text NOT NULL,
                                         title text NOT NULL,
-                                        body text NOT NULL
+                                        body text NOT NULL,
+                                        hash text NOT NUll
 
                                     ); """
 
@@ -61,8 +70,8 @@ def create_article(conn, article):
     :param article:
     :return: article id
     """
-    sql = ''' INSERT INTO articles(issue, article, language, author, title, body)
-              VALUES(?,?,?,?,?,?) '''
+    sql = ''' INSERT INTO articles(issue, article, language, author, title, body,hash)
+              VALUES(?,?,?,?,?,?,?) '''
     cur = conn.cursor()
     cur.execute(sql, article)
     return cur.lastrowid
@@ -82,11 +91,64 @@ def write_data_toDB(metadata, f):
     author = split_file[1].replace('Author: ', "")
     body = split_file[2].replace('Abstract: ', "")
 
+    entry = str(body)
+
+    # Hash Entry to prevent duplicates
+    hash_value = hashlib.md5(entry.encode())
+
     conn = create_connection(DATABASE)
     with conn:
+        pass
         # create a new article
         # (issue, article_number, language, title, author, body):
-        article = (issue, article_number,language, author, title, body )
+        article = (issue, article_number,language, author, title, body, hash_value.hexdigest() )
         article_id = create_article(conn, article)
-	
-    print(issue, article_number, language, article_id, title, author, body)
+
+
+def store_articles():
+    issues = []
+    articles = []
+
+    # List all files in a directory using os.listdir
+    basepath = './data/original_data/text-files'
+    entries = os.scandir(basepath)
+    print(f"Looking in {basepath} for issues:")
+
+    # TODO: This can probably be optimized a bit... but not today
+    # From the base directory look for all issues of the magazine and append them to the issues list
+    for issue in entries:
+        if (issue.name != ".DS_Store"):
+            issues.append(issue.name)
+    
+    print(f'Found {len(issues)} issues in {basepath}!')
+    issues.sort()
+    
+    available_languages =  ['DE', 'EN', 'FR']
+
+    # With the issues list, look through all the articles directories, basepath and issue list, check if the specific language file exsits and write it to the database.
+    for issue in issues:
+        print(issue)
+        articlepath = basepath + "/" + issue
+        article_entries = os.scandir(articlepath)
+        for article in article_entries:
+            articles.append(article.name)
+            for language in available_languages:
+                full_filePath = str(articlepath + '/' + article.name + '/' + language +'.txt')
+                if os.path.isfile(full_filePath):
+                    test_metadata = [issue, article.name, language]
+                    print(f"{language} file exsist")
+                    write_data_toDB(test_metadata, read_data(full_filePath))
+                else:
+                    print(f"{language} file does not exist!")
+                print(f"\t\t found article {article.name} in {articlepath}.")
+    articles.sort()
+    print(f'Found: {len(articles)} articles in {len(issues)} issues!' )
+
+
+# TODO make it so that the user can select any file.
+def read_data(file_name):
+    f = open(file_name, "r")
+    print(f"\t {file_name}")
+    text = f.read()
+    f.close()
+    return text
