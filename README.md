@@ -95,6 +95,34 @@ DE|X|X|X
 EN|X|X|X
 FR|X|X|X
 
+
+05.1 To run the GUI we need to first start the server.
+First open a terminal, and start the virtual environment in the semester_assignment directory
+
+DEVELOPMENT STAGE:
+
+At the moment the feature is not merged to the master branch, thus you need to be on the "feature-GUI branch" to see the GUI.
+Before you switch don't forget to (locally) commit your files, that you worked on.
+
+```
+$ git checkout feature-GUI
+```
+
+On that branch you can see the GUI by doing the following:
+
+```
+$ source ../venv/bin/activate
+$ export FLASK_APP=main.py 
+$ export FLASK_DEBUG=1
+$ flask run
+```
+Now you can go to a sensible webbrowser and go to this location:
+http://localhost:5000/
+
+or 
+
+http://127.0.0.1:5000/
+
     
 ## Corpus Source: 
 
