@@ -84,3 +84,6 @@ def write_data_toDB(test_file):
         article = ('issue_TEST', 'article_aTest','de', author, title, body )
         article_id = create_article(conn, article)
 	# print(article_id, title, author, body)
+
+def get_articles():
+    pass
