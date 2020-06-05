@@ -15,6 +15,19 @@ __version__ = "0.1.0"
 __maintainer__ = "Tobias Weisskopf"
 __status__ = "Dev"
 
+# Load Sample Data
+sample_data = pd.read_csv('sample_data.csv',delimiter=',')
+
+# This part is for the GUI
+from flask import Flask, render_template, url_for
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    test = rg.write_report(sample_data)
+    return render_template('home.html', tables=[test.to_html()])
+
 #Define tha Database File as a Static File
 DATABASE = r"articles.db"
 
@@ -43,9 +56,6 @@ def main():
     print("Starting Pre-Processing...")
     #test_case.text_preProcessing()
     
-    sample_data = pd.read_csv('sample_data.csv',delimiter=',')
-    report = rg.write_report(sample_data)
-
 
     print("Finished Pre-Processing...\n")
     print("------------------------------")
@@ -56,3 +66,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    app.run(debug=True)

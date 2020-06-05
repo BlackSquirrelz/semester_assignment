@@ -2,12 +2,7 @@
 
 def write_report(data):
     report_data = calculate_fscore(data)
-    #print(report_data)
-
     return(report_data)
-
-# True Positive, False Positive, True Negative, False Negative
-# data[0], data[1], data[2], data[3]
 
 def calculate_recall(tp, fn):
     rec = tp / (tp + fn)

@@ -168,3 +168,6 @@ def checkArticleExistance(conn, hash_value):
         article_exists =  True
 
     return article_exists
+
+def get_articles():
+    pass
