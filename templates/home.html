@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid">
+  <h1>CALR - Semester Assignment</h1>
+    <p>GUI for the project</p>
+    <h2>Parser Result</h2>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+</div>
+{% endblock content %}  
