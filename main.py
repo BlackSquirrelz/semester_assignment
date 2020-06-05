@@ -26,7 +26,10 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     test = rg.write_report(sample_data)
-    return render_template('home.html', tables=[test.to_html()])
+    issues = db.get_issues()
+    articles = db.get_articles()
+    body = db.get_article_text()
+    return render_template('home.html', tables=[test.to_html()], issues=issues, articles=articles, body=body)
 
 #Define tha Database File as a Static File
 DATABASE = r"articles.db"
@@ -60,7 +63,6 @@ def main():
     print("Finished Pre-Processing...\n")
     print("------------------------------")
     print("Generating Report...\n")
-    print(report)
     print("------------------------------")
     print("Finished Program")
 

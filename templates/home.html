@@ -3,6 +3,40 @@
 <div class="container-fluid">
   <h1>CALR - Semester Assignment</h1>
     <p>GUI for the project</p>
+    <div class="row">
+        <div class="col">
+            <p>Select Issue</p>
+            <select name="issues">
+            {% for issue in issues %}
+                <option value="{{ issue["issue"] }}">{{ issue["issue"] }}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <div class="col">
+            <p>Select Article</p>
+            <select name="articles">
+            {% for article in articles %}
+                <option value="{{ article["article"] }}">{{ article["article"] }}</option>
+            {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col">
+      <h3>German</h3>
+        {% for article in articles %}
+            <textarea readonly>{{ article["article"] }}</textarea>
+        {% endfor %}
+    </div>
+    <div class="col">
+      <h3>English</h3>
+      <p>{{ body["article"]}}</p> 
+    </div>
+    <div class="col">
+      <h3>French</h3>
+      <textarea readonly>{{ body["article"] }}</textarea> 
+    </div>
+  </div>
     <h2>Parser Result</h2>
     {% for table in tables %}
         {{ table|safe }}

@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3 as sql
 from sqlite3 import Error
 
 # System stuff
@@ -43,7 +43,7 @@ def create_connection(db_file):
     """
     conn = None
     try:
-        conn = sqlite3.connect(db_file)
+        conn = sql.connect(db_file)
         return conn
     except Error as e:
         print(e)
@@ -70,7 +70,7 @@ def create_article(conn, article):
     :param article:
     :return: article id
     """
-    sql = ''' INSERT INTO articles(issue, article, language, author, title, body,hash)
+    sql = ''' INSERT INTO articles(issue, article, language, author, title, body, hash)
               VALUES(?,?,?,?,?,?,?) '''
     cur = conn.cursor()
     cur.execute(sql, article)
@@ -170,4 +170,25 @@ def checkArticleExistance(conn, hash_value):
     return article_exists
 
 def get_articles():
-    pass
+    con = sql.connect("articles.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("select distinct(article) from articles Order By article ASC")
+    rows = cur.fetchall()
+    return rows
+
+def get_issues():
+    con = sql.connect("articles.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("select distinct(issue) from articles Order By issue ASC")
+    rows = cur.fetchall()
+    return rows
+
+def get_article_text():
+    con = sql.connect("articles.db")
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("select * from articles where article='article_a1'")
+    rows = cur.fetchall()
+    return rows
