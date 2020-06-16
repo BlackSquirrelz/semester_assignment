@@ -1,4 +1,0 @@
-Title: An anti paralysis button
-Author: Daniel Saraga
-Abstract: A start-up in Lausanne hopes to improve the re-education of paralysed limbs. The idea is to give patients greater control over therapy.
-

@@ -1,9 +1,0 @@
-Title: Observing nanotransporters in the blood
-Author: Sylvia Wagner
-Abstract: Zebrafish a testing ground for nanomedicines
-
-Red nanoparticles spread through the green bloodstream of the zebrafish embryos. | Image: Sandro Sieber and Dominik Witzigmann
-In nanomedicine, tiny transporters often deliver drugs specifically to sick tissue – such as a tumour. The first such nanotransporters are already being used in clinical situations. And yet in tests in rats and mice, these vehicles – just a fraction of a millimetre in size – are constantly offering new surprises. Some transporters already get stuck soon after being injected. Whereas others circulate in the blood long enough to reach the sick tissue, as has now been demonstrated by Dominik Witzigmann, Sandro Sieber and their team at the University of Basel.
-These two pharmacologists used green fluorescent blood vessels to carry out their tests on zebrafish embryos. Using zebrafish is ethically less problematical than using rodents, which are more highly developed. What’s more, the zebrafish embryos have a fascinating advantage: they are transparent.
-This means that the research team can observe in a living organism how the nanotransporters – marked with a red fluorescent colour – spread out in the blood vessels. It transpired that even the tiniest differences in their structure had a major impact on their distribution in the organism.
-It is still extremely difficult today to predict how nanotransporters will behave in an organism. The researchers hope that their tests on zebrafish embryos will enable them to find out how nanotransporters have to be constructed so that they can deliver the biggest possible amount of their ‘cargo’ to sick cells, thereby leaving healthy tissue untouched. “The zebrafish model is intended to help us identify the most promising candidates from a number of different transporters before we embark on a complex series of tests in rodents”, says Witzigmann.

@@ -1,9 +1,0 @@
-Title: Das Herz als Kraftwerk für seinen Schrittmacher
-Author: Alexandra Bröhm
-Abstract: Eine Berner Forschungsgruppe hat einen Herzschrittmacher entwickelt, der ohne Batterie funktioniert.
-
-Der Harvester soll künftig im Herzen die Energie produzieren, die der Herzschrittmacher braucht. | Bild: Adrian Zurbuchen
-Ärztinnen und Ärzte implantieren jährlich weltweit mehr als eine Million Herzschrittmacher. Der Eingriff ist Routine, aber nach fünf bis zehn Jahren braucht das kleine Gerät eine neue Batterie. Und jede erneute Operation birgt ein Risiko für Komplikationen. Aus diesem Grund forscht der biomedizinische Ingenieur Adrian Zurbuchen an einem autonomen Herzschrittmacher, der ohne Batterie auskommen könnte.
-«Einmal implantieren und dann vergessen, wäre das Ziel», sagt Zurbuchen, der gerade einen Forschungsaufenthalt an der University of Michigan in Ann Arbor beendet. Er schlägt zusammen mit Kollegen von der Universität Bern einen neuen Ansatz vor: Ein kleines Gerät aus Magneten und Spulen wandelt die Aktivität des Herzmuskels in elektrische Energie für den Schrittmacher um. Mit jedem Muskelschlag bewegt das Herz den sogenannten Harvester. Der Minigenerator könnte mit einem Katheter in die rechte Seite des Herzens implantieren werden. Der Nachteil dieser Lösung: Wegen der Magnete im Harvester müsste ein Patient auf MRIUntersuchungen verzichten.
-Um jede Minute sechs Liter Blut zirkulieren zu lassen, bringt das Herz eine Pumpleistung von rund einem Watt. Ein Herzschrittmacher benötigt dagegen nur fünf bis zehn Mikrowatt, würde also nur einen Bruchteil der vom Muskel produzierten Energie benötigen. Bei einem Invivo-Versuch an Schweinen gelang es dem Team, bei einem Herzschlag von 160 Schlägen pro Minute 1,7 Mikrowatt Leistung zu erzeugen. Das reicht zwar noch nicht ganz, doch in einer Simulation hat Zurbuchen durchgerechnet, welche Parameter des Harvesters verändert werden müssten, um genügend Energie zu gewinnen.
-Alexandra  Bröhm

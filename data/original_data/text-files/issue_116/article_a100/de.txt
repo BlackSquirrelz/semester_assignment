@@ -1,4 +1,0 @@
-Title: Dieses Startup macht Menschenprognosen
-Author: Florian Fisch
-Abstract: Wie sich Menschenmengen verhalten, lässt sich mit physikalischen Gesetzen vorhersagen. Ein Startup nutzt dies für flexibles Zielgruppenmarketing.
-

@@ -1,4 +1,0 @@
-Title: In vitro en 3D
-Author: Daniel Saraga
-Abstract: Des startups helvétiques développent des tissus cellulaires en trois dimensions. Comparés aux cultures standard en 2D, ils permettent de réaliser des tests plus fiables pour les médicaments et matériaux biocompatibles.
-

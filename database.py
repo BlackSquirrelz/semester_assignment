@@ -77,6 +77,8 @@ def create_article(conn, article):
     return cur.lastrowid
     
 
+# Initially this function is used to create all the articles in the database,
+#  after initialization this serves no more purpose
 
 def write_data_toDB(metadata, f):
     

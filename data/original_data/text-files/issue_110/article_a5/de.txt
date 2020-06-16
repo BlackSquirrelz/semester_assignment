@@ -1,4 +1,0 @@
-Title: In 3D sind Zellkulturen realistischer
-Author: Daniel Saraga
-Abstract: Verschiedene Schweizer Start-ups entwickeln dreidimensionale Zellgewebe. Verglichen mit den üblichen einschichtigen Zellkulturen bieten sie realistischere Testbedingungen für Wirkstoffe, Materialien für Implantate und toxikologische Untersuchungen.
-
