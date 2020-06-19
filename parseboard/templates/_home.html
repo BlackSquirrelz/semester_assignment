@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid">
+  <h1>CALR - Semester Assignment</h1>
+    <p>GUI for the project</p>
+    <div class="row">
+        <div class="col">
+            <p id="test">Select Issue</p>
+            <select name="issues" method="GET" action="/">
+            {% for issue in issues %}
+                <option value="{{ issue["issue"] }}" SELECTED>{{ issue["issue"] }}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <div class="col">
+            <p>Select Article</p>
+            <select name="articles" method="GET" action="/">
+            {% for article in articles %}
+                <option value="{{ article["article"] }}" SELECTED>{{ article["article"] }}</option>
+            {% endfor %}
+            </select>
+        </div> 
+        <div class="col">
+            <p>Run Comparison</p>
+            <button type="button" class="btn" id="btn_get_results">Go!</button>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col">
+      <h3>German</h3>
+        <textarea readonly>{{ articles["article"] }}</textarea> 
+    </div>
+    <div class="col">
+      <h3>English</h3>
+      <textarea readonly>{{ body["article"] }}</textarea> 
+    </div>
+    <div class="col">
+      <h3>French</h3>
+      <textarea readonly>{{ body["article"] }}</textarea> 
+    </div>
+  </div>
+  <div id="report">
+    <h2>Parser Result</h2>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}  

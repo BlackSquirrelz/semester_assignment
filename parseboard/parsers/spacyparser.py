@@ -1,22 +1,56 @@
+"""
+NLP Pipeline spaCy: Tokenizer, Lemmatiser, PoS-Tagger, Dependency Parsing + Visualization
+"""
+
+from typing import List, Tuple
+from argparse import ArgumentParser, FileType
+
 import spacy
 
-# Parsing based on the spacy.io homepage
-def parse_english():
-    nlp = spacy.load('en_core_web_sm')
+nlp = spacy.load('en')
 
-    text = ("When Sebastian Thrun started working on self-driving cars at "
-        "Google in 2007, few people outside of the company took him "
-        "seriously. “I can tell you very senior CEOs of major American "
-        "car companies would shake my hand and turn away because I wasn’t "
-        "worth talking to,” said Thrun, in an interview with Recode earlier "
-        "this week.")
-    doc = nlp(text)
 
-    # Analyze syntax
-    print("Noun phrases:", [chunk.text for chunk in doc.noun_chunks])
-    print("Verbs:", [token.lemma_ for token in doc if token.pos_ == "VERB"])
+def parse_spacy(article):
+    article = "This is a test article"
+    article_tokenized = tokenize(article)
+    article_lemmatized = lemmatise(article_tokenized)
+    result = article_lemmatized
+    return result
 
-    # Find named entities, phrases and concepts
-    for entity in doc.ents:
-        print(entity.text, entity.label_)
 
+def tokenize(article: str) -> List[Tuple[str, str]]:
+    """Textfile to Doc, tokenize"""
+    with open(article, 'r', encoding='utf-8') as f:
+        for line in f:
+            word = nlp(f)
+    for token in word:
+        print(token)
+    return token
+
+
+def lemmatise(article: str) -> List[Tuple[str, str]]:
+    """
+    Lemmatise an article.
+
+    :param article: The article to be lemmatised.
+    :return: A list of (token, lemma) tuples.
+    """
+
+    token_lemma_tuples = []
+    for token in nlp(article):
+        token_lemma_tuples.append((token.text, token.lemma_))
+    return token_lemma_tuples
+
+
+""" def main():
+    parser = ArgumentParser(description="Lemmatise an English article.")
+    parser.add_argument('article', type=FileType('r'), help="The article to lemmatise.")
+    args = parser.parse_args()
+    for token in tokenize(args.article):
+        print(token)
+#    for token, lemma in lemmatise(args.article):
+#        print(f'{token}\t{lemma}') """
+
+
+def evaluation():
+    pass
