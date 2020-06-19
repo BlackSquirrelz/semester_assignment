@@ -12,19 +12,6 @@
         $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
         $(document).ready(function(){
             $("#dropdownMenuButtonIssue").click(function(){
-                //alert("Select a Test Article will begin");
-                $("#select_article").show();
-            });
-        });
-        $(document).ready(function(){
-            $("#selection_article").click(function(){
-                //alert("You can now start parsing");
-                $("#start_parsing").show();
-            });
-        });
-        $(document).ready(function(){
-            $("#btn_parse").click(function(){
-                //alert("Parsing will begin");
                 
             });
         });
@@ -32,12 +19,24 @@
     <script type=text/javascript>
   $(function() {
     $('#btn_parse').bind('click', function() {
+        var isu = document.getElementById("dropdownMenuButtonIssue");
+        var arti = document.getElementById("dropdownMenuButtonArticle")
+        var issue_id = isu.options[isu.selectedIndex].value;
+        var article_id = arti.options[arti.selectedIndex].value;
+        console.log("The user selected " + String(issue_id) + " and, " + String(article_id) + ".");
       $.getJSON( 
         $SCRIPT_ROOT + "_report",
+        {
+            issue: "1",
+            article: "2"
+
+        },
         function(data) {
-            $('#result').text(data.body);
-    }
-);
+            $('#en_article').text(data.en.body);
+            $('#de_article').text(data.en.body);
+            $('#fr_article').text(data.en.body);
+        }
+    );
       return false;
     });
   });

@@ -51,15 +51,11 @@
 				</dd>
 			</dl>
 			<div class="dropdown">
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonIssue" data-toggle="dropdown">
-					Select Issue
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButtonIssue">
-					 <a class="dropdown-item disabled" href="#">Issue</a> 
-                     {% for issue in issues %}
-                        <a class="dropdown-item" href="#">{{ issue['issue'] }}</a>
-                    {% endfor %}
-                </div>
+			<select id="dropdownMenuButtonIssue">
+			{% for issue in issues %}
+				<option value="{{ issue['id'] }}">{{ issue['issue'] }}</option>
+			{% endfor %}
+			</select>
 			</div>
 		</div>
 		<div class="col-md-4" id="select_article">
@@ -96,16 +92,11 @@
 				</dd>
 			</dl>
 			<div class="dropdown">
-				 
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonArticle" data-toggle="dropdown">
-					Select Article
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButtonArticle">
-					 <a class="dropdown-item disabled" href="#">Article</a> 
-                     {% for article in articles %}
-                         <a class="dropdown-item" href="{{ url_for('main.article', article_id=article.id ) }}">{{ article['article'] }}</a>
-                     {% endfor %}
-				</div>
+				<select id="dropdownMenuButtonArticle">
+				{% for article in articles %}
+					<option value="{{ article['id'] }}">{{ article['article'] }}</option>
+				{% endfor %}
+			</select>
 			</div>
 		</div>
 		<div class="col-md-4" id="start_parsing">

@@ -14,22 +14,11 @@ def home():
     return render_template('home.html', articles=articles, issues=all_issues)
 
 
-@main.route("/<int:article_id>")
-def article(article_id):
-    article = {
-        "article": "1",
-        "body": "LOREM",
-        'language': 'en'
-        }
-    return jsonify(article)
-
-
 @main.route('/_report', methods=['GET', 'POST'])
 def reporting():
-    # report = evaluation.evaulate_parsers()
-    report = {
-        "article": "1",
-        "body": "LOREM",
-        'language': 'en'
-        }
-    return jsonify(report)
+    issue_id = request.args('issue', 0, type=int)
+    article_id = request.args('article', 0, type=int)
+
+    issue = Issue.query.get(issue_id)
+    article = Article.query.get(article_id)
+    return jsonify({'isu': issue.serialize(), 'art': article.serialize()})
