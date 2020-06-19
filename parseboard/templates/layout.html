@@ -7,21 +7,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
     <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
         $(document).ready(function(){
-            $("#btn_get_results").click(function(){
-                alert("Parsing will begin");
-                $("#report").show();
+            $("#dropdownMenuButtonIssue").click(function(){
+                //alert("Select a Test Article will begin");
+                $("#select_article").show();
+            });
+        });
+        $(document).ready(function(){
+            $("#selection_article").click(function(){
+                //alert("You can now start parsing");
+                $("#start_parsing").show();
+            });
+        });
+        $(document).ready(function(){
+            $("#btn_parse").click(function(){
+                //alert("Parsing will begin");
+                
             });
         });
     </script>
+    <script type=text/javascript>
+  $(function() {
+    $('#btn_parse').bind('click', function() {
+      $.getJSON( 
+        $SCRIPT_ROOT + "_report",
+        function(data) {
+            $('#result').text(data.body);
+    }
+);
+      return false;
+    });
+  });
+</script>
 </head>
 <body>
     {% block content %}{% endblock %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>

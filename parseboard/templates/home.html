@@ -14,13 +14,10 @@
 			<p>
 				This website is an interactive report generator for creating a parse tree on the Horizon Data.
 			</p>
-			<p>
-				<a class="btn" href="#">X »</a>
-			</p>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-4" id="select_issue">
 			<h3>
 				1. Choose Issue
 			</h3>
@@ -54,18 +51,18 @@
 				</dd>
 			</dl>
 			<div class="dropdown">
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-					Issue
+				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonIssue" data-toggle="dropdown">
+					Select Issue
 				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					 <a class="dropdown-item disabled" href="#">Action</a> 
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButtonIssue">
+					 <a class="dropdown-item disabled" href="#">Issue</a> 
                      {% for issue in issues %}
-                        <a class="dropdown-item" href="#">{{ issue }}</a>
+                        <a class="dropdown-item" href="#">{{ issue['issue'] }}</a>
                     {% endfor %}
                 </div>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4" id="select_article">
 			<h3>
 				2. Choose Article
 			</h3>
@@ -100,18 +97,18 @@
 			</dl>
 			<div class="dropdown">
 				 
-				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-					Action
+				<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonArticle" data-toggle="dropdown">
+					Select Article
 				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButtonArticle">
 					 <a class="dropdown-item disabled" href="#">Article</a> 
                      {% for article in articles %}
-                         <a class="dropdown-item" href="#">{{ article }}</a>
+                         <a class="dropdown-item" href="{{ url_for('main.article', article_id=article.id ) }}">{{ article['article'] }}</a>
                      {% endfor %}
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4" id="start_parsing">
 			<h3>
 				3. Start Parsing
 			</h3>
@@ -119,36 +116,16 @@
 				<dt>
 					Description lists
 				</dt>
-				<dd>
-					A description list is perfect for defining terms.
-				</dd>
-				<dt>
-					Euismod
-				</dt>
-				<dd>
-					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-				</dd>
-				<dd>
-					Donec id elit non mi porta gravida at eget metus.
-				</dd>
-				<dt>
-					Malesuada porta
-				</dt>
-				<dd>
-					Etiam porta sem malesuada magna mollis euismod.
-				</dd>
-				<dt>
-					Felis euismod semper eget lacinia
-				</dt>
-				<dd>
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+				<dd id="result">
+					?
 				</dd>
 			</dl> 
-			<button type="button" class="btn btn-success">
-				Button
+			<button id="btn_parse" type="button" class="btn btn-success">
+				Parse
 			</button>
 		</div>
 	</div>
+	<div id="test_case">
 	<div class="row">
 		<div class="col-md-12">
 			<h3>
@@ -190,9 +167,7 @@
 			<h2>
                 English
 			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
+				<p><a href="#" id="en_article">English article to be displayed here!</a></p>
 			<p>
 				<a class="btn" href="#"></a>
 			</p>
@@ -201,9 +176,7 @@
 			<h2>
 				German
 			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
+			<p><a href="#" id="de_article">German article to be displayed here!</a></p>
 			<p>
 				<a class="btn" href="#"></a>
 			</p>
@@ -212,9 +185,7 @@
 			<h2>
 				French
 			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
+			<p><a href="#" id="fr_article">French article to be displayed here!</a></p>
 			<p>
 				<a class="btn" href="#"></a>
 			</p>
@@ -320,6 +291,7 @@
 			<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg">
 		</div>
 	</div>
+	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<h3>
@@ -332,98 +304,74 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg">
+			<img alt="Bootstrap Image Preview" src="{{ url_for('static', filename='media/team/wtb.png') }}" width="240" height="240">
+			<h2>Tobias Weisskopf</h2>
 			<dl>
 				<dt>
-					Description lists
+					Field of Study
 				</dt>
 				<dd>
-					A description list is perfect for defining terms.
+					Computational Linguistics and Sinology @ UZH
 				</dd>
 				<dt>
-					Euismod
+					Professional Background
 				</dt>
 				<dd>
-					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-				</dd>
-				<dd>
-					Donec id elit non mi porta gravida at eget metus.
+					Forensic Scientist @ KPMG 
 				</dd>
 				<dt>
-					Malesuada porta
+					Fun Fact
 				</dt>
 				<dd>
-					Etiam porta sem malesuada magna mollis euismod.
-				</dd>
-				<dt>
-					Felis euismod semper eget lacinia
-				</dt>
-				<dd>
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					Voluntary working on open source software project to fight COVID-19 from Taiwan #mylog14
 				</dd>
 			</dl>
 		</div>
 		<div class="col-md-4">
-			<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg">
+			<img alt="Bootstrap Image Preview" src="{{ url_for('static', filename='media/team/adr.png') }}" width="240" height="240">
+			<h2>Ariana Dragusha</h2>
 			<dl>
 				<dt>
-					Description lists
+					Field of Study
 				</dt>
 				<dd>
-					A description list is perfect for defining terms.
+					Digital Linguistics @ UZH
 				</dd>
 				<dt>
-					Euismod
+					Professional Background
 				</dt>
 				<dd>
-					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-				</dd>
-				<dd>
-					Donec id elit non mi porta gravida at eget metus.
+					Research Assistant @ Slavic Seminar
 				</dd>
 				<dt>
-					Malesuada porta
+					Fun Fact
 				</dt>
 				<dd>
-					Etiam porta sem malesuada magna mollis euismod.
-				</dd>
-				<dt>
-					Felis euismod semper eget lacinia
-				</dt>
-				<dd>
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					Study the Albanian language in Switzerland in an academic setting, makes her super happy.
 				</dd>
 			</dl>
 		</div>
 		<div class="col-md-4">
-			<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg">
+			<img alt="Bootstrap Image Preview" src="{{ url_for('static', filename='media/team/rmc.png') }}" width="240" height="240">
+			<h2>TRodolfo Miranda Chavez</h2>
 			<dl>
 				<dt>
-					Description lists
+					Field of Study
 				</dt>
 				<dd>
-					A description list is perfect for defining terms.
+					General Linguistics and English @ UNIL 
 				</dd>
 				<dt>
-					Euismod
+					Professional Background
 				</dt>
 				<dd>
-					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-				</dd>
-				<dd>
-					Donec id elit non mi porta gravida at eget metus.
+					Work as a FLE (French as a Foreign language) teacher
 				</dd>
 				<dt>
-					Malesuada porta
+					Fun Fact
 				</dt>
 				<dd>
-					Etiam porta sem malesuada magna mollis euismod.
-				</dd>
-				<dt>
-					Felis euismod semper eget lacinia
-				</dt>
-				<dd>
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					Studying German and Italian at the moment
 				</dd>
 			</dl>
 		</div>

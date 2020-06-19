@@ -8,7 +8,7 @@ class Issue(db.Model):
     id = db.Column(db.Integer, unique=True, nullable=False)
     issue = db.Column(db.String(10), unique=True, nullable=False, primary_key=True)
     hash = db.Column(db.String(255), unique=True, nullable=False)
-    articles = db.relationship('Article', backref='article', lazy=True)
+    articles = db.relationship('Article', backref='issue', lazy=True)
 
     def __init_(self, issue, hash, articles):
         self.issue = issue
@@ -29,7 +29,7 @@ class Issue(db.Model):
 
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    article = db.Column(db.String(10), unique=True, nullable=False)
+    article = db.Column(db.String(10), unique=False, nullable=False)
     language = db.Column(db.String(2), unique=False, nullable=False)
     author = db.Column(db.String(50), unique=False, nullable=False)
     title = db.Column(db.String(100), unique=False, nullable=False)
