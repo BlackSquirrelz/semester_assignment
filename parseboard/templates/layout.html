@@ -19,22 +19,21 @@
     <script type=text/javascript>
   $(function() {
     $('#btn_parse').bind('click', function() {
-        var isu = document.getElementById("dropdownMenuButtonIssue");
-        var arti = document.getElementById("dropdownMenuButtonArticle")
-        var issue_id = isu.options[isu.selectedIndex].value;
-        var article_id = arti.options[arti.selectedIndex].value;
+        issue_id = $('select[id=dropdownMenuButtonIssue]').val()
+        article_id = $('select[id=dropdownMenuButtonArticle]').val()
         console.log("The user selected " + String(issue_id) + " and, " + String(article_id) + ".");
       $.getJSON( 
         $SCRIPT_ROOT + "_report",
         {
-            issue: "1",
-            article: "2"
+            issue: issue_id,
+            article: $('select[id=dropdownMenuButtonArticle]').val()
 
         },
         function(data) {
-            $('#en_article').text(data.en.body);
+            
+            $('#en_article').text(data.de.body);
             $('#de_article').text(data.en.body);
-            $('#fr_article').text(data.en.body);
+            $('#fr_article').text(data.fr.body);
         }
     );
       return false;
