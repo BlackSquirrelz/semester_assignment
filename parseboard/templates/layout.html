@@ -31,9 +31,30 @@
         },
         function(data) {
             
+            //Write the body of the selected article in to the preview.
             $('#en_article').text(data.de.body);
             $('#de_article').text(data.en.body);
             $('#fr_article').text(data.fr.body);
+
+            // Write the output from evaluation to the relative table rows
+            // Uncomment the lines when a parser is implemented
+
+            // Stanford Parser
+            $('#stanford_de').text(data.evaluation_stanford.de);
+            $('#stanford_en').text(data.evaluation_stanford.en);
+            $('#stanford_fr').text(data.evaluation_stanford.fr);
+
+            // Allen Parser
+            $('#allen_de').text(data.evaluation_allen.de);
+            $('#allen_en').text(data.evaluation_allen.en);
+            $('#allen_fr').text(data.evaluation_allen.fr);
+
+            // Spacy Parser
+            $('#spacy_de').text(data.evaluation_spacy.de);
+            $('#spacy_en').text(data.evaluation_spacy.en);
+            $('#spacy_fr').text(data.evaluation_spacy.fr);
+
+
         }
     );
       return false;

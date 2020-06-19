@@ -2,55 +2,36 @@
 NLP Pipeline spaCy: Tokenizer, Lemmatiser, PoS-Tagger, Dependency Parsing + Visualization
 """
 
+# TODO Replace result with something useful...
+
 from typing import List, Tuple
-from argparse import ArgumentParser, FileType
 
 import spacy
 
-nlp = spacy.load('en')
+nlp_en = spacy.load('en_core_web_sm')
+nlp_fr = spacy.load('en_core_web_sm')
+nlp_de = spacy.load('en_core_web_sm')
 
 
-def parse_spacy(article):
-    article = "This is a test article"
-    article_tokenized = tokenize(article)
-    article_lemmatized = lemmatise(article_tokenized)
-    result = article_lemmatized
+def parse_spacy_en(article):
+    doc = nlp_en(article)
+    for token in doc:
+        print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_, token.shape_, token.is_alpha, token.is_stop)
+    result = 1
     return result
 
 
-def tokenize(article: str) -> List[Tuple[str, str]]:
-    """Textfile to Doc, tokenize"""
-    with open(article, 'r', encoding='utf-8') as f:
-        for line in f:
-            word = nlp(f)
-    for token in word:
-        print(token)
-    return token
+def parse_spacy_de(article):
+    doc = nlp_de(article)
+    for token in doc:
+        print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_, token.shape_, token.is_alpha, token.is_stop)
+    result = 7
+    return result
 
 
-def lemmatise(article: str) -> List[Tuple[str, str]]:
-    """
-    Lemmatise an article.
-
-    :param article: The article to be lemmatised.
-    :return: A list of (token, lemma) tuples.
-    """
-
-    token_lemma_tuples = []
-    for token in nlp(article):
-        token_lemma_tuples.append((token.text, token.lemma_))
-    return token_lemma_tuples
-
-
-""" def main():
-    parser = ArgumentParser(description="Lemmatise an English article.")
-    parser.add_argument('article', type=FileType('r'), help="The article to lemmatise.")
-    args = parser.parse_args()
-    for token in tokenize(args.article):
-        print(token)
-#    for token, lemma in lemmatise(args.article):
-#        print(f'{token}\t{lemma}') """
-
-
-def evaluation():
-    pass
+def parse_spacy_fr(article):
+    doc = nlp_fr(article)
+    for token in doc:
+        print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_, token.shape_, token.is_alpha, token.is_stop)
+    result = 3
+    return result

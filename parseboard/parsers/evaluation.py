@@ -1,7 +1,26 @@
-# https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c
+from parseboard.parsers import spacyparser
 
-def evaulate_parsers(data):
-    report_data = calculate_fscore(data)
+# https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c
+def evaulate_parsers(article_de, article_en, article_fr):
+
+    # Get all articles from the database
+    print(f"German Article to parse: {article_de.body}")
+    print(f"English Article to parse: {article_en.body}")
+    print(f"French Article to parse: {article_fr.body}")
+
+    # report_data = calculate_fscore()
+
+    # TODO Call Spacy
+    spacy_scores = []
+    spacy_scores.append(spacyparser.parse_spacy_de(article_de.body))
+    spacy_scores.append(spacyparser.parse_spacy_en(article_en.body))
+    spacy_scores.append(spacyparser.parse_spacy_fr(article_fr.body))
+
+    # TODO Call Allen
+    
+    # TODO Call Stanford
+    report_data = {'de': spacy_scores[0], 'en': spacy_scores[1], 'fr': spacy_scores[2]}
+
     return(report_data)
 
 
