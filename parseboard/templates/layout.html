@@ -20,7 +20,14 @@
   $(function() {
     $('#btn_parse').bind('click', function() {
         issue_id = $('select[id=dropdownMenuButtonIssue]').val()
+        issue_text = $('select[id=dropdownMenuButtonIssue]').text()
+
+        article_text = $('select[id=dropdownMenuButtonArticle]').text()
         article_id = $('select[id=dropdownMenuButtonArticle]').val()
+
+        $('#now_parsing_issue').text(issue_text);
+        $('#now_parsing_article').text(article_text);
+        
         console.log("The user selected " + String(issue_id) + " and, " + String(article_id) + ".");
       $.getJSON( 
         $SCRIPT_ROOT + "_report",
@@ -40,19 +47,19 @@
             // Uncomment the lines when a parser is implemented
 
             // Stanford Parser
-            $('#stanford_de').text(data.evaluation_stanford.de);
-            $('#stanford_en').text(data.evaluation_stanford.en);
-            $('#stanford_fr').text(data.evaluation_stanford.fr);
+            $('#stanford_de').text(data.evaluation_stanford.de_stan);
+            $('#stanford_en').text(data.evaluation_stanford.en_stan);
+            $('#stanford_fr').text(data.evaluation_stanford.fr_stan);
 
             // Allen Parser
-            $('#allen_de').text(data.evaluation_allen.de);
-            $('#allen_en').text(data.evaluation_allen.en);
-            $('#allen_fr').text(data.evaluation_allen.fr);
+            $('#allen_de').text(data.evaluation_allen.de_allen);
+            $('#allen_en').text(data.evaluation_allen.en_allen);
+            $('#allen_fr').text(data.evaluation_allen.fr_allen);
 
             // Spacy Parser
-            $('#spacy_de').text(data.evaluation_spacy.de);
-            $('#spacy_en').text(data.evaluation_spacy.en);
-            $('#spacy_fr').text(data.evaluation_spacy.fr);
+            $('#spacy_de').text(data.evaluation_spacy.de_spacy);
+            $('#spacy_en').text(data.evaluation_spacy.en_spacy);
+            $('#spacy_fr').text(data.evaluation_spacy.fr_spacy);
 
 
         }
@@ -64,6 +71,10 @@
 </head>
 <body>
     {% block content %}{% endblock %}
+    {% block footer %}
+        &copy; Copyright 2020 by <a href="http://domain.invalid/"></a>.
+    {% endblock %}
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

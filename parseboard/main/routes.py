@@ -27,8 +27,12 @@ def reporting():
     article_fr = Article.query.get(article_id + 2)
 
     #print(article_de.title, article_en.title, article_fr.title)
+    test_article_de = "Ich bin ein deutscher Satz."
+    test_article_en = "I am an English sentence."
+    test_article_fr = "Je suis une phrase française."
 
-    evaluation_scores = evaluation.evaulate_parsers(article_de, article_en, article_fr)
+    evaluation_scores = evaluation.evaulate_parsers(test_article_de, test_article_en, test_article_fr)
+    # evaluation_scores = evaluation.evaulate_parsers(article_de, article_en, article_fr)
     print(f"Those are the scores: {evaluation_scores}")
 
     return jsonify({'de': article_de.serialize(), 'en': article_en.serialize(), 'fr': article_fr.serialize(), 'evaluation_spacy': evaluation_scores, 'evaluation_allen': evaluation_scores, 'evaluation_stanford': evaluation_scores})

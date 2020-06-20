@@ -14,9 +14,13 @@
 			<p>
 				This website is an interactive report generator for creating a parse tree on the Horizon Data.
 			</p>
+			<p> Dependency parsing has become important for a variety of NLP applications, such as event extraction (Björne et al., 2009), error correction (Tetreault et al., 2010), and machine translation (Stein et al., 2010). As dependency parsing is often one of the last steps in a NLP pipeline, the accuracy performance has to be high-reaching. For this reason, the present paper focuses on an empirical comparison of three dependency parsers, namely AllenNLP, spaCy, and Stanford Dependency Parser, where the latter serves simultaneously as our baseline. The data set that was parsed, consists of the multilingual magazine Horizons, a Swiss research magazine. The research question that this paper will bring light into is how the different parsers perform on the same data set in terms of accuracy.
+			</p>
 		</div>
 	</div>
 	<hr>
+	<!-- ISSUE 9: TODO: Dependent Dropdown list to be implemented -->
+	<!-- https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html-->
 	<div class="row">
 		<div class="col-md-4" id="select_issue">
 			<h3>
@@ -24,31 +28,16 @@
 			</h3>
 			<dl>
 				<dt>
-					Description lists
+					Issue
 				</dt>
 				<dd>
-					A description list is perfect for defining terms.
+					The first step is to select an issue, with the article that you would like to parse.
 				</dd>
 				<dt>
-					Euismod
+					Future releases
 				</dt>
 				<dd>
-					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-				</dd>
-				<dd>
-					Donec id elit non mi porta gravida at eget metus.
-				</dd>
-				<dt>
-					Malesuada porta
-				</dt>
-				<dd>
-					Etiam porta sem malesuada magna mollis euismod.
-				</dd>
-				<dt>
-					Felis euismod semper eget lacinia
-				</dt>
-				<dd>
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					...of the application should be able to add your own text.
 				</dd>
 			</dl>
 			<div class="dropdown">
@@ -65,31 +54,16 @@
 			</h3>
 			<dl>
 				<dt>
-					Description lists
+					Article Selection
 				</dt>
 				<dd>
-					A description list is perfect for defining terms.
+					Now, you can select an article to parse.
 				</dd>
 				<dt>
-					Euismod
+					Future releases
 				</dt>
 				<dd>
-					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-				</dd>
-				<dd>
-					Donec id elit non mi porta gravida at eget metus.
-				</dd>
-				<dt>
-					Malesuada porta
-				</dt>
-				<dd>
-					Etiam porta sem malesuada magna mollis euismod.
-				</dd>
-				<dt>
-					Felis euismod semper eget lacinia
-				</dt>
-				<dd>
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					...of the application will have a dependent article selection, and the ability to add your own articles.
 				</dd>
 			</dl>
 			<div class="dropdown">
@@ -106,10 +80,11 @@
 			</h3>
 			<dl>
 				<dt>
-					Description lists
+					Now Parsing:
 				</dt>
-				<dd id="result">
-					?
+				<dd id="now_parsing">
+					<h6>Issue:</h6><p id="now_parsing_issue">Please make a selection</p>
+					<h6>Article:</h6><p id="now_parsing_article">Please make a selection</p>
 				</dd>
 			</dl> 
 			<button id="btn_parse" type="button" class="btn btn-success">
