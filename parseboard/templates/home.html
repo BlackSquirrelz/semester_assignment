@@ -21,7 +21,41 @@
 	<hr>
 	<!-- ISSUE 9: TODO: Dependent Dropdown list to be implemented -->
 	<!-- https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html-->
-	<div class="row">
+		<div id="test_case">
+			<div class="row">
+			<div class="col-md-12">
+				<h3>
+					Evaluating Parsers
+				</h3>
+				<dl>
+					<dt>
+						Background
+					</dt>
+					<dd>
+						Based on Data from the Horizons Research Magazine, that was provided to us by the University of Zurich, the unannotated texts were loaded into a database, where we can access individual articles, for parsing.
+					</dd>
+					<dt>
+						Stanford NLP Parser (Stanza)
+					</dt>
+					<dd>
+						Stanza is our baseline parser, against which we evaluate the fscore of two other parsers.
+					</dd>
+					<dt>
+						Multilingual Suppport
+					</dt>
+					<dd>
+						Each parser that we evaluate has its own default model from the parsing providers. We evaluate the same article in three available languages.
+					</dd>
+					<dt>
+						Output
+					</dt>
+					<dd>
+						The output of the parsing evaluation, is a table which parser is compared to the Stanford parser more suitable for the given application.
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="row">
 		<div class="col-md-4" id="select_issue">
 			<h3>
 				1. Choose Issue
@@ -92,65 +126,32 @@
 			</button>
 		</div>
 	</div>
-	<div id="test_case">
 	<div class="row">
-		<div class="col-md-12">
-			<h3>
-				Test Case
-			</h3>
-			<dl>
-				<dt>
-					Description lists
-				</dt>
-				<dd>
-					A description list is perfect for defining terms.
-				</dd>
-				<dt>
-					Euismod
-				</dt>
-				<dd>
-					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-				</dd>
-				<dd>
-					Donec id elit non mi porta gravida at eget metus.
-				</dd>
-				<dt>
-					Malesuada porta
-				</dt>
-				<dd>
-					Etiam porta sem malesuada magna mollis euismod.
-				</dd>
-				<dt>
-					Felis euismod semper eget lacinia
-				</dt>
-				<dd>
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-				</dd>
-			</dl>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-4" height="900">
 			<h2>
                 German
 			</h2>
 				<p id="en_article">German article to be displayed here!</p>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4" height="900">
 			<h2>
 				English
 			</h2>
 			<p id="de_article">English article to be displayed here!</p>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4" height="900">
 			<h2>
 				French
 			</h2>
 			<p id="fr_article">French article to be displayed here!</p>
 		</div>
 	</div>
+	<hr>
 	<div class="row">
 		<div class="col-md-8">
+			<h3>
+				Evaluation Results:
+			</h3>
 			<table class="table">
 				<thead>
 					<tr>
@@ -239,14 +240,14 @@
 				Team
 			</h3>
 			<p>
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+			Here is the project team of this application.
 			</p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4">
 			<img alt="Bootstrap Image Preview" src="{{ url_for('static', filename='media/team/wtb.png') }}" width="240" height="240">
-			<h2>Tobias Weisskopf</h2>
+			<h4>Tobias Weisskopf</h4>
 			<dl>
 				<dt>
 					Field of Study
@@ -270,7 +271,7 @@
 		</div>
 		<div class="col-md-4">
 			<img alt="Bootstrap Image Preview" src="{{ url_for('static', filename='media/team/adr.png') }}" width="240" height="240">
-			<h2>Ariana Dragusha</h2>
+			<h4>Ariana Dragusha</h4>
 			<dl>
 				<dt>
 					Field of Study
@@ -294,7 +295,7 @@
 		</div>
 		<div class="col-md-4">
 			<img alt="Bootstrap Image Preview" src="{{ url_for('static', filename='media/team/rmc.png') }}" width="240" height="240">
-			<h2>TRodolfo Miranda Chavez</h2>
+			<h4>Rodolfo Miranda Chavez</h4>
 			<dl>
 				<dt>
 					Field of Study

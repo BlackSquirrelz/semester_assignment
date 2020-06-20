@@ -5,24 +5,25 @@ from parseboard.parsers import spacyparser, stanford
 def evaulate_parsers(article_de, article_en, article_fr):
 
     # Get all articles from the database
-    print(f"German Article to parse: {article_de}")
-    print(f"English Article to parse: {article_en}")
-    print(f"French Article to parse: {article_fr}")
+    # print(f"German Article to parse: {article_de}")
+    # print(f"English Article to parse: {article_en}")
+    # print(f"French Article to parse: {article_fr}")
 
     # report_data = calculate_fscore()
 
     # TODO Call Spacy
     spacy_scores = []
+    spacy_parsed = []
     # spacy_scores.append(spacyparser.parse_spacy_de(article_de.body))
     # spacy_scores.append(spacyparser.parse_spacy_en(article_en.body))
     # spacy_scores.append(spacyparser.parse_spacy_fr(article_fr.body))
 
-    spacy_scores.append(spacyparser.parse_spacy_de(article_de))
-    spacy_scores.append(spacyparser.parse_spacy_en(article_en))
-    spacy_scores.append(spacyparser.parse_spacy_fr(article_fr))
+    spacy_parsed.append(spacyparser.parse_spacy_de(article_de))
+    spacy_parsed.append(spacyparser.parse_spacy_en(article_en))
+    spacy_parsed.append(spacyparser.parse_spacy_fr(article_fr))
 
     # TODO Create AllenNLP Parsing Function, and call the proper values....
-    allen_scores =[]
+    allen_scores = []
     allen_scores.append(50)
     allen_scores.append(60)
     allen_scores.append(70)
@@ -33,6 +34,15 @@ def evaulate_parsers(article_de, article_en, article_fr):
     stanford_scores.append(stanford.parse_stan_de(article_de))
     stanford_scores.append(stanford.parse_stan_en(article_en))
     stanford_scores.append(stanford.parse_stan_fr(article_fr))
+
+
+    # spacy scores placeholder
+    spacy_scores.append(3)
+    spacy_scores.append(3)
+    spacy_scores.append(3)
+
+    print(f"Stanford: {stanford_scores}")
+    print(f"Spacy: {spacy_parsed}")
 
     report_data = {'de_stan': stanford_scores[0], 'en_stan': stanford_scores[1], 'fr_stan': stanford_scores[2], 'de_spacy': spacy_scores[0], 'en_spacy': spacy_scores[1], 'fr_spacy': spacy_scores[2], 'de_allen': allen_scores[0], 'en_allen': allen_scores[1], 'fr_allen': allen_scores[2]}
 

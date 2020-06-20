@@ -5,35 +5,31 @@ https://github.com/stanfordnlp/stanza/
 
 import stanza
 
-# Load Models
-stanza.download('en')
-stanza.download('de')
-stanza.download('fr')
-
-nlp_en = stanza.Pipeline('en')
-nlp_de = stanza.Pipeline('de')
-nlp_fr = stanza.Pipeline('fr')
-
 
 def parse_stan_en(article):
+    # stanza.download('en')
+    result = []
+    nlp_en = stanza.Pipeline(lang='en', processors='tokenize,pos,lemma,depparse')
     doc = nlp_en(article)
-    doc.sentences[0].print_dependencies()
-    result = 10
-    print(doc)
+    result = [{'text': word.text, 'upos': word.upos, 'deprel': word.deprel} for sent in doc.sentences for word in sent.words]
     return result
 
 
 def parse_stan_de(article):
+    result = []
+    # stanza.download('de')
+    nlp_de = stanza.Pipeline(lang='de', processors='tokenize,pos,lemma,depparse')
     doc = nlp_de(article)
-    doc.sentences[0].print_dependencies()
-    result = 20
-    print(doc)
+    result = [{'text': word.text, 'upos': word.upos, 'deprel': word.deprel} for sent in doc.sentences for word in sent.words]
+    #for word in doc:
+    #    result.append({'text': word.text, 'upos': word.upos, 'deprel': word.deprel})
     return result
 
 
 def parse_stan_fr(article):
+    # stanza.download('fr')
+    result = []
+    nlp_fr = stanza.Pipeline(lang='fr', processors='tokenize,pos,lemma,depparse')
     doc = nlp_fr(article)
-    doc.sentences[0].print_dependencies()
-    result = 30
-    print(doc)
+    result = [{'text': word.text, 'upos': word.upos, 'deprel': word.deprel} for sent in doc.sentences for word in sent.words]
     return result
