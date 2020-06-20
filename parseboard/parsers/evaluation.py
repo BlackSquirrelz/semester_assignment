@@ -4,6 +4,7 @@ import pandas as pd
 # Import Parsers
 import stanza
 import spacy
+import en_core_web_sm, de_core_news_sm, fr_core_news_sm
 
 
 # https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c
@@ -39,16 +40,10 @@ def evaulate_parsers(article_de, article_en, article_fr):
     Define Spacy Models, Assign Dataframe to List
     """
 
-    # Load Spacy Models
-    spacy_nlp_en = spacy.load('en_core_web_sm')
-    spacy_nlp_fr = spacy.load('fr_core_news_sm')
-    spacy_nlp_de = spacy.load('de_core_news_sm')
+    df_spacy_de = spacyparser.parse_spacy(article_de, de_core_news_sm.load())
+    df_spacy_en = spacyparser.parse_spacy(article_en, en_core_web_sm.load())
+    df_spacy_fr = spacyparser.parse_spacy(article_fr, fr_core_news_sm.load())
 
-    df_spacy_de = spacyparser.parse_spacy(article_de, spacy_nlp_de)
-    df_spacy_en = spacyparser.parse_spacy(article_en, spacy_nlp_en)
-    df_spacy_fr = spacyparser.parse_spacy(article_fr, spacy_nlp_fr)
-
-    # TODO
     # Evaluate Parsers against each other....
     df_complete_de = pd.concat([df_stanford_de, df_spacy_de], axis=1, sort=False)
     df_complete_en = pd.concat([df_stanford_en, df_spacy_en], axis=1, sort=False)
@@ -77,7 +72,7 @@ def evaulate_parsers(article_de, article_en, article_fr):
     print(df_complete_fr.spacy_eval.value_counts())
 
 
-    report_data = {'de_stan': 1, 'en_stan': 1, 'fr_stan': 1, 'de_spacy': 1, 'en_spacy': 1, 'fr_spacy': 1, 'de_allen': allen_scores[0], 'en_allen': allen_scores[1], 'fr_allen': allen_scores[2]}
+    report_data = {'de_stan': 100, 'en_stan': 100, 'fr_stan': 100, 'de_spacy': 1, 'en_spacy': 1, 'fr_spacy': 1, 'de_allen': allen_scores[0], 'en_allen': allen_scores[1], 'fr_allen': allen_scores[2]}
 
     return(report_data)
 
