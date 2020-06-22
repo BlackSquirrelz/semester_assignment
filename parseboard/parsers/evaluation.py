@@ -8,6 +8,7 @@ import en_core_web_sm
 import de_core_news_sm 
 import fr_core_news_sm
 
+languages = ['en', 'de', 'fr']
 
 # https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c
 def evaulate_parsers(article_de, article_en, article_fr):
@@ -71,48 +72,31 @@ def evaulate_parsers(article_de, article_en, article_fr):
     # Evaluate the Parsers Against the Stanford Parse
     # print(df_stanford_de.equals(df_spacy_de))
 
-    print(df_complete_de.spacy_eval.value_counts())
-    print(df_complete_en.spacy_eval.value_counts())
-    print(df_complete_fr.spacy_eval.value_counts())
+    allen_scores = [0,0,0]
+    spacy_scores = []
+    stanford_scores = [1,1,1]
 
+    spacy_de_scores = df_complete_de.spacy_eval.value_counts().tolist()
+    spacy_en_scores = df_complete_en.spacy_eval.value_counts().tolist()
+    spacy_fr_scores = df_complete_fr.spacy_eval.value_counts().tolist()
 
-    report_data = {'de_stan': 100, 'en_stan': 100, 'fr_stan': 100, 'de_spacy': 1, 'en_spacy': 1, 'fr_spacy': 1, 'de_allen': allen_scores[0], 'en_allen': allen_scores[1], 'fr_allen': allen_scores[2]}
+    spacy_de_score = calculate_score(spacy_de_scores[0], spacy_de_scores[0] + spacy_de_scores[1])
+    spacy_en_score = calculate_score(spacy_en_scores[0], spacy_en_scores[0] + spacy_en_scores[1])
+    spacy_fr_score = calculate_score(spacy_fr_scores[0], spacy_fr_scores[0] + spacy_fr_scores[1])
 
+    spacy_scores.append(spacy_de_score)
+    spacy_scores.append(spacy_en_score)
+    spacy_scores.append(spacy_fr_score)
+    
+
+    print(spacy_scores)
+    
+    # The Report Data sets Stanford Parser Output to 100 by default, as it is the parser we wan't to compare against. The other parsers are set by their values of true and false in comparison to the stanford parser
+    report_data = {'de_stan': stanford_scores[0], 'en_stan': stanford_scores[1], 'fr_stan': stanford_scores[2], 'de_spacy': spacy_scores[0], 'en_spacy': spacy_scores[1], 'fr_spacy': spacy_scores[2], 'de_allen': allen_scores[0], 'en_allen': allen_scores[1], 'fr_allen': allen_scores[2]}
+    # report_data = {'de_stan': 100, 'en_stan': 100, 'fr_stan': 100, 'de_spacy': 93.2, 'en_spacy': 92.6, 'fr_spacy': 90.7, 'de_allen': 87.9, 'en_allen': 88.6, 'fr_allen': 90.2}
     return(report_data)
 
 
-def calculate_recall(tp, fn):
-    rec = tp / (tp + fn)
-    return rec
-
-
-# True Positive, False Positive, True Negative, False Negative
-# data[0], data[1], data[2], data[3]
-def calculate_accuracy(tp, fp):
-    prec = tp / (tp + fp)
-    return prec
-
-
-# Calculate FSCORE
-def calculate_fscore(data):
-    # LANG,PAR,TP,FN,TN,FP
-    # De-list confusion matrix
-    tp = data['TP']
-    fp = data['FP']
-    tn = data['TN']
-    fn = data['FN']
-
-    # Caclulate precsion and recall for the fscore calculation
-    precision = calculate_accuracy(tp, fn)
-    recall = calculate_recall(tp, fp)
-
-    # print(f"\tcalculating F-Score on {precision}, {recall}")
-    # data['f_score'] = 2 * (precision * recall) / (precision + recall)
-
-    data = {
-        'en': {'f_score': '1'},
-        'fr': {'f_score': '0'},
-        'de': {'f_score': '0.5'}
-    }
-
-    return data
+def calculate_score(true_values, total):
+    percentage = true_values / total
+    return percentage
