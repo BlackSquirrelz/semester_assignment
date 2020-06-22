@@ -22,8 +22,17 @@
         issue_id = $('select[id=dropdownMenuButtonIssue]').val()
         issue_text = $('select[id=dropdownMenuButtonIssue]').text()
 
+	const button = document.querySelector('btn_parse')
+   
+
+	button.disabled = true
+
         article_text = $('select[id=dropdownMenuButtonArticle]').text()
         article_id = $('select[id=dropdownMenuButtonArticle]').val()
+
+	alert('Start Parsing of Issue Nr. ' String(issue_text) + ' and Article Nr. ' + String(article_text) + '!')       
+
+
 
         $('#now_parsing_issue').text(issue_text);
         $('#now_parsing_article').text(article_text);
@@ -72,7 +81,10 @@
 <body>
     {% block content %}{% endblock %}
     {% block footer %}
-        &copy; Copyright 2020 by <a href="http://domain.invalid/"></a>.
+        &copy; All copyright reserved. <a href="http://domain.invalid/"></a>.
+	Reference: 
+	[1] Data Source: https://www.horizons-mag.ch/ provided by UZH, as part of the course Creation and Annotation of Linguistic Resources - FS2020
+	[2] ...
     {% endblock %}
 
     <!-- Optional JavaScript -->

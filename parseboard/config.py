@@ -1,13 +1,16 @@
 import os
+import json
+import urllib3
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
 
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY')
-    # os.environ['DATABASE_URL']
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///articles.db'
-
+    SECRET_KEY = config.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = config.get('SQLALCHEMY_DATABASE_URI')
+    
 
 class ProductionConfig(Config):
     DEBUG = False
