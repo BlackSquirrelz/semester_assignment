@@ -27,6 +27,8 @@ Each group will prepare a 15-min. presentation describing
 media technolgy.
 
 
+
+
 ## Installation
 
 ```
@@ -130,6 +132,8 @@ https://www.horizons-mag.ch/
 
 ## References:
 
+A comprehensive list of dependencies used can be found on the GitHub repository of this project in the “requirements.txt” file. 
+
 https://www.nltk.org/book/ch08.html
 
 https://www.tutorialspoint.com/natural_language_processing/natural_language_processing_syntactic_analysis.htm
@@ -155,6 +159,7 @@ Abeille, A. (Ed.). (2012). Treebanks: Building and Using Parsed Corpora ´ (Vol.
 
 ## Known Issues
 
+Please see Issue Tab of this project.
 
 
 
