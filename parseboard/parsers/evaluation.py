@@ -88,8 +88,6 @@ def evaulate_parsers(article_de, article_en, article_fr):
     spacy_scores.append(spacy_en_score)
     spacy_scores.append(spacy_fr_score)
     
-
-    print(spacy_scores)
     
     # The Report Data sets Stanford Parser Output to 100 by default, as it is the parser we wan't to compare against. The other parsers are set by their values of true and false in comparison to the stanford parser
     report_data = {'de_stan': stanford_scores[0], 'en_stan': stanford_scores[1], 'fr_stan': stanford_scores[2], 'de_spacy': spacy_scores[0], 'en_spacy': spacy_scores[1], 'fr_spacy': spacy_scores[2], 'de_allen': allen_scores[0], 'en_allen': allen_scores[1], 'fr_allen': allen_scores[2]}

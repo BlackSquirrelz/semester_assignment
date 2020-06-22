@@ -21,9 +21,7 @@
     $('#btn_parse').bind('click', function() {
         issue_id = $('select[id=dropdownMenuButtonIssue]').val()
         issue_text = $('select[id=dropdownMenuButtonIssue]').text()
-
-	     
-
+    
         article_text = $('select[id=dropdownMenuButtonArticle]').text()
         article_id = $('select[id=dropdownMenuButtonArticle]').val()
 
@@ -67,12 +65,53 @@
             $('#spacy_en').text(data.evaluation_spacy.en_spacy);
             $('#spacy_fr').text(data.evaluation_spacy.fr_spacy);
 
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['English', 'German', 'French'],
+                    datasets: [{
+                        label: 'Stanford',
+                        data: [data.evaluation_stanford.de_stan, data.evaluation_stanford.en_stan, data.evaluation_stanford.fr_stan],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'AllenNLP',
+                        data: [data.evaluation_allen.de_allen, data.evaluation_allen.en_allen, data.evaluation_allen.fr_allen],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'SpaCy',
+                        data: [data.evaluation_spacy.de_spacy, data.evaluation_spacy.en_spacy, data.evaluation_spacy.fr_spacy],
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+
             $('#btn_parse').prop('disabled', false)
         }
     );
       return false;
     });
   });
+</script>
+<script>
+ $(document).ready(function(){
+  
+});
 </script>
 </head>
 <body>
@@ -89,5 +128,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 </body>
 </html>
