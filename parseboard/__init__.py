@@ -3,10 +3,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from .config import Config
 
-# Deployed Server Settings
-import json
-import urllib3
-
 db = SQLAlchemy()
 
 

@@ -4,7 +4,9 @@ import pandas as pd
 # Import Parsers
 import stanza
 import spacy
-import en_core_web_sm, de_core_news_sm, fr_core_news_sm
+import en_core_web_sm
+import de_core_news_sm 
+import fr_core_news_sm
 
 
 # https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c
@@ -14,7 +16,6 @@ def evaulate_parsers(article_de, article_en, article_fr):
     # print(f"German Article to parse: {article_de}")
     # print(f"English Article to parse: {article_en}")
     # print(f"French Article to parse: {article_fr}")
-
 
     # TODO Create AllenNLP Parsing Function, and call the proper values....
     allen_scores = []
@@ -27,9 +28,12 @@ def evaulate_parsers(article_de, article_en, article_fr):
     The Stanford Parser is the Baseline for this Application, we compare every other parser to the output of the Stanford Parser.
     Define Models, Assign Dataframe to List
     """
-    nlp_en = stanza.Pipeline(lang='en', processors='tokenize,pos,lemma,depparse')
-    nlp_de = stanza.Pipeline(lang='de', processors='tokenize,pos,lemma,depparse')
-    nlp_fr = stanza.Pipeline(lang='fr', processors='tokenize,pos,lemma,depparse')
+
+    config = "tokenize,mwt,pos,lemma,depparse"
+
+    nlp_en = stanza.Pipeline(lang='en', processors=config)
+    nlp_de = stanza.Pipeline(lang='de', processors=config)
+    nlp_fr = stanza.Pipeline(lang='fr', processors=config)
 
     df_stanford_en = stanford.parse_stan(article_en, nlp_en)
     df_stanford_de = stanford.parse_stan(article_de, nlp_de)
