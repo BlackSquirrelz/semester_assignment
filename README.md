@@ -8,6 +8,9 @@
 - Rodolfo Miranda Chavez
 - Tobias Weisskopf
 
+## NOTE:
+The hosted version has an out of memory issue on the server, see issues. Which results in a 500 Internal Server Error. If that happens during the test, please contact Tobias in order to restart the server. (The first try works, subsequent tries trigger the out of memory error because of the Stanza Model which is loaded into cache).
+
 ## Assignment:
 
 The final project will be prepared in groups of 3-4 people. The project requires an application
